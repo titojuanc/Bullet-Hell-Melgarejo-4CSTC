@@ -1,3 +1,74 @@
 [gd_scene format=3 uid="uid://btj1pyx67gnrs"]
 
-[node name="Slash" type="Node2D" unique_id=1156553391]
+[ext_resource type="Script" uid="uid://bwbxvelt6pn8l" path="res://Scripts/Slash.gd" id="1_6p5jv"]
+[ext_resource type="Texture2D" uid="uid://c2xh75jwxuwwb" path="res://Assets/sword_slash-removebg-preview.png" id="1_ekiq7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6p5jv"]
+atlas = ExtResource("1_ekiq7")
+region = Rect2(0, 0, 41, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ct7vv"]
+atlas = ExtResource("1_ekiq7")
+region = Rect2(41, 0, 41, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ly2n"]
+atlas = ExtResource("1_ekiq7")
+region = Rect2(82, 0, 41, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prnaf"]
+atlas = ExtResource("1_ekiq7")
+region = Rect2(123, 0, 41, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ly44v"]
+atlas = ExtResource("1_ekiq7")
+region = Rect2(164, 0, 41, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmh7j"]
+atlas = ExtResource("1_ekiq7")
+region = Rect2(205, 0, 41, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wcqpb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6p5jv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ct7vv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ly2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prnaf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ly44v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmh7j")
+}],
+"loop": true,
+"name": &"Flying",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4m7v7"]
+radius = 19.026299
+
+[node name="Slash" type="RigidBody2D" unique_id=250163442]
+collision_layer = 2
+collision_mask = 2
+gravity_scale = 0.0
+script = ExtResource("1_6p5jv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=351108809]
+position = Vector2(-1, 0)
+sprite_frames = SubResource("SpriteFrames_wcqpb")
+animation = &"Flying"
+autoplay = "Flying"
+frame_progress = 0.07929729
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2046033014]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_4m7v7")

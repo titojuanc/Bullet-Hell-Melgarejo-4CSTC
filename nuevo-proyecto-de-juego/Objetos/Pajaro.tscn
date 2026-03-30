@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://btx86vsmw7fx5"]
+
+[ext_resource type="Script" uid="uid://8dnhulfgldns" path="res://Objetos/Pajaro.gd" id="1_ii7w6"]
+[ext_resource type="Texture2D" uid="uid://brhg22co3fy1m" path="res://Assets/flying-creature-cycle-skin.png" id="1_t04py"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5akuo"]
+atlas = ExtResource("1_t04py")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igf08"]
+atlas = ExtResource("1_t04py")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igwsw"]
+atlas = ExtResource("1_t04py")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4k7jh"]
+atlas = ExtResource("1_t04py")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xth04"]
+atlas = ExtResource("1_t04py")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8t6lq"]
+atlas = ExtResource("1_t04py")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhqxo"]
+atlas = ExtResource("1_t04py")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ckkh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5akuo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igf08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igwsw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4k7jh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xth04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8t6lq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhqxo")
+}],
+"loop": true,
+"name": &"Movimiento",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nf8xo"]
+size = Vector2(25.75, 22.25)
+
+[node name="Jefe" type="CharacterBody2D" unique_id=132458992]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_ii7w6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2040706559]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_1ckkh")
+animation = &"Movimiento"
+autoplay = "Movimiento"
+frame = 5
+frame_progress = 0.68646806
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1766067857]
+light_mask = 3
+position = Vector2(-0.125, 2.125)
+shape = SubResource("RectangleShape2D_nf8xo")

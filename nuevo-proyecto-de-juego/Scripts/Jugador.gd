@@ -2,12 +2,20 @@ extends CharacterBody2D
 
 const VELOCIDAD = 200.0
 
+@export var Slash = preload("res://Objetos/Slash.tscn")
 @onready var animador: AnimatedSprite2D = $AnimatedSprite2D
 
-var atacando := false
+var atacando = false
+var en_cooldown = false
+var cooldown: Timer
 
 func _ready() -> void:
 	animador.animation_finished.connect(_on_ataque_terminado)
+	cooldown = Timer.new()
+	cooldown.one_shot = true
+	cooldown.wait_time = 0.8  
+	cooldown.timeout.connect(func(): en_cooldown = false)
+	add_child(cooldown)
 
 func _physics_process(delta: float) -> void:
 	
@@ -20,16 +28,20 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if Input.is_action_pressed("attack"):
-		atacando = true
-		animador.play("Shoot")
-		
+		if !en_cooldown:
+			atacando = true
+			var bullet = Slash.instantiate()
+			add_child(bullet)
+			bullet.position = Vector2.ZERO
+			animador.play("Shoot")
+			en_cooldown = true
+			cooldown.start()
 
 	if direccion.x != 0:
 		animador.flip_h = direccion.x < 0
 
 	if atacando:
 			return 
-		
 	animador.play("Walk" if direccion != Vector2.ZERO else "Idle")
 
 func _on_ataque_terminado() -> void:
