@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bxfm3j8lylm0v"]
+
+[ext_resource type="PackedScene" uid="uid://mra8ie23lb8h" path="res://Objetos/Jugador.tscn" id="1_ahw28"]
+[ext_resource type="PackedScene" path="res://Objetos/Pared.tscn" id="2_15bu2"]
+[ext_resource type="Texture2D" uid="uid://uq1a4plxaxiy" path="res://Assets/fondo.jpg" id="3_attba"]
+
+[node name="Arena" type="Node2D" unique_id=1004500855]
+
+[node name="CharacterBody2D" parent="." unique_id=1047151213 instance=ExtResource("1_ahw28")]
+position = Vector2(469, 299)
+scale = Vector2(3, 3)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=718602288]
+scale = Vector2(0.33333334, 0.33333334)
+
+[node name="Area2D" parent="." unique_id=1646558566 instance=ExtResource("2_15bu2")]
+position = Vector2(577, 11)
+
+[node name="Area2D2" parent="." unique_id=284505743 instance=ExtResource("2_15bu2")]
+position = Vector2(572, 635)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=627926578]
+z_index = -1
+offset_left = -2.0
+offset_top = 2.0
+offset_right = 1148.0
+offset_bottom = 640.0
+texture = ExtResource("3_attba")
+stretch_mode = 1
