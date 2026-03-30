@@ -175,7 +175,5 @@ shape = SubResource("CircleShape2D_4i53u")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=486488990]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_qw48o")
-animation = &"Shoot"
+animation = &"Walk"
 autoplay = "Idle"
-frame = 5
-frame_progress = 1.0

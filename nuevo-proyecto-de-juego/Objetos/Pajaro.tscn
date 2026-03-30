@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://btx86vsmw7fx5"]
 
-[ext_resource type="Script" uid="uid://8dnhulfgldns" path="res://Objetos/Pajaro.gd" id="1_ii7w6"]
+[ext_resource type="Script" uid="uid://8dnhulfgldns" path="res://Scripts/Pajaro.gd" id="1_ii7w6"]
 [ext_resource type="Texture2D" uid="uid://brhg22co3fy1m" path="res://Assets/flying-creature-cycle-skin.png" id="1_t04py"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5akuo"]

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const VELOCIDAD = 200.0
+const velocidad = 200.0
 
 @export var Slash = preload("res://Objetos/Slash.tscn")
 @onready var animador: AnimatedSprite2D = $AnimatedSprite2D
@@ -18,13 +18,11 @@ func _ready() -> void:
 	add_child(cooldown)
 
 func _physics_process(delta: float) -> void:
-	
 	var direccion := Vector2(
 		Input.get_axis("left", "right"),
 		Input.get_axis("up", "down")
 	).normalized()
-
-	velocity = direccion * VELOCIDAD
+	velocity = direccion * velocidad
 	move_and_slide()
 	
 	if Input.is_action_pressed("attack"):
@@ -36,10 +34,8 @@ func _physics_process(delta: float) -> void:
 			animador.play("Shoot")
 			en_cooldown = true
 			cooldown.start()
-
 	if direccion.x != 0:
 		animador.flip_h = direccion.x < 0
-
 	if atacando:
 			return 
 	animador.play("Walk" if direccion != Vector2.ZERO else "Idle")
