@@ -56,8 +56,8 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_4m7v7"]
 radius = 19.026299
 
-[node name="Slash" type="RigidBody2D" unique_id=250163442]
-collision_layer = 2
+[node name="Slash" type="RigidBody2D" unique_id=250163442 groups=["Bala"]]
+collision_layer = 4
 collision_mask = 2
 gravity_scale = 0.0
 script = ExtResource("1_6p5jv")
@@ -67,7 +67,7 @@ position = Vector2(-1, 0)
 sprite_frames = SubResource("SpriteFrames_wcqpb")
 animation = &"Flying"
 autoplay = "Flying"
-frame_progress = 0.042221814
+frame_progress = 0.66764057
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2046033014]
 position = Vector2(1, 0)

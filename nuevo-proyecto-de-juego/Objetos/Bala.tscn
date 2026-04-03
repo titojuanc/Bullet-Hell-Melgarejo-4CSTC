@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://v5os2q2cvkp" path="res://Scripts/Bala.gd" id="2_pbkxs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_17pp0"]
-radius = 16.0
+radius = 13.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jupoy"]
 atlas = ExtResource("1_eo0e8")
@@ -56,16 +56,17 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="Bala" type="RigidBody2D" unique_id=2042657136]
+[node name="Bala" type="RigidBody2D" unique_id=2042657136 groups=["Bala"]]
+collision_layer = 8
 gravity_scale = 0.0
 script = ExtResource("2_pbkxs")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1564469024]
-position = Vector2(1, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1564469024 groups=["Bala"]]
+position = Vector2(1, -2)
 shape = SubResource("CircleShape2D_17pp0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=23293716]
 sprite_frames = SubResource("SpriteFrames_hclj1")
 animation = &"Flying"
 autoplay = "Flying"
-frame_progress = 0.60751015
+frame_progress = 0.34764042

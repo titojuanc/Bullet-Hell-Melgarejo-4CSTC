@@ -1,15 +1,16 @@
 [gd_scene format=3 uid="uid://bxfm3j8lylm0v"]
 
 [ext_resource type="PackedScene" uid="uid://mra8ie23lb8h" path="res://Objetos/Jugador.tscn" id="1_ahw28"]
+[ext_resource type="PackedScene" uid="uid://btj1pyx67gnrs" path="res://Objetos/Slash.tscn" id="2_2tl2k"]
 [ext_resource type="PackedScene" uid="uid://btx86vsmw7fx5" path="res://Objetos/Pajaro.tscn" id="3_2tl2k"]
 [ext_resource type="Texture2D" uid="uid://uq1a4plxaxiy" path="res://Assets/fondo.jpg" id="3_attba"]
 
 [node name="Arena" type="Node2D" unique_id=1004500855]
-position = Vector2(-3, 5)
 
 [node name="CharacterBody2D" parent="." unique_id=1047151213 instance=ExtResource("1_ahw28")]
-position = Vector2(469, 299)
+position = Vector2(-124, 383)
 scale = Vector2(3, 3)
+Slash = ExtResource("2_2tl2k")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=718602288]
 scale = Vector2(0.33333334, 0.33333334)

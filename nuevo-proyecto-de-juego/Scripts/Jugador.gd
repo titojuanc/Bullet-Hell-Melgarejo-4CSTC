@@ -23,8 +23,9 @@ func _physics_process(delta: float) -> void:
 		Input.get_axis("up", "down")
 	).normalized()
 	velocity = direccion * velocidad
-	move_and_slide()
-	
+	var collsion = move_and_collide(velocity * delta)
+	if collsion:
+		queue_free()
 	if Input.is_action_pressed("attack"):
 		if !en_cooldown:
 			atacando = true

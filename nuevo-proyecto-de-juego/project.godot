@@ -15,6 +15,10 @@ run/main_scene="uid://bxfm3j8lylm0v"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[global_group]
+
+Bala=""
+
 [input]
 
 up={
