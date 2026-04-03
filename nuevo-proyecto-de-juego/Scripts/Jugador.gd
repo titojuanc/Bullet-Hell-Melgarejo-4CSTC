@@ -43,3 +43,4 @@ func _physics_process(delta: float) -> void:
 func _on_ataque_terminado() -> void:
 	if animador.animation == "Shoot":
 		atacando = false
+	

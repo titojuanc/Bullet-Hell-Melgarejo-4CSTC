@@ -80,3 +80,9 @@ frame_progress = 0.68646806
 light_mask = 3
 position = Vector2(-0.125, 2.125)
 shape = SubResource("RectangleShape2D_nf8xo")
+
+[node name="Cooldown" type="Timer" parent="." unique_id=54475268]
+
+[node name="Rotor" type="Node2D" parent="." unique_id=697461578]
+
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

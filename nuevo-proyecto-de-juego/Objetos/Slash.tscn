@@ -50,7 +50,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Flying",
-"speed": 6.0
+"speed": 12.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4m7v7"]
@@ -67,7 +67,7 @@ position = Vector2(-1, 0)
 sprite_frames = SubResource("SpriteFrames_wcqpb")
 animation = &"Flying"
 autoplay = "Flying"
-frame_progress = 0.07929729
+frame_progress = 0.042221814
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2046033014]
 position = Vector2(1, 0)
