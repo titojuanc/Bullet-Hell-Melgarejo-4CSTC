@@ -7,7 +7,7 @@ var canones
 var radio = 10
 var disparo = preload("res://Objetos/Bala.tscn")
 var atacando = false
-var ataque_seleccionado = 1
+var ataque_seleccionado
 
 #variables de nodos hijos
 @onready var ataque_cooldown = $Ataque_Cooldown
@@ -37,18 +37,19 @@ func _physics_process(delta: float) -> void:
 
 func _on_cooldown_timeout() -> void:
 	if atacando == false:
+		velocity = Vector2.ZERO
 		_configurar_ataque()
 		atacando = true
 	else:
+		ataque_cooldown.stop()
 		atacando = false
 		_resetear_canones()
-		timer.wait_time = 2
+		timer.wait_time = 1
 		timer.start()
-		ataque_cooldown.stop()
 		_moverse()
 
 func _configurar_ataque() -> void:
-	var n = 3
+	var n = randi_range(1, 3)
 	if n == 1:
 		ataque_seleccionado = 1
 		
@@ -66,13 +67,13 @@ func _configurar_ataque() -> void:
 		timer.wait_time = 3
 		ataque_cooldown.wait_time = 0.1
 	elif n == 3:
-		ataque_seleccionado == 3
+		ataque_seleccionado = 3
 		
 		#configuracion del ataque 3:
 		canones = 1
-		grados_rotados = 0
+		grados_rotados = 45
 		timer.wait_time = 5
-		ataque_cooldown.wait_time = 0.7
+		ataque_cooldown.wait_time = 0.2
 		
 	_generar_canones(canones)
 	timer.start()
@@ -141,4 +142,7 @@ func _rotar_canones() -> void:
 	rotor.rotation_degrees = fmod(rotacion_actual, 360)
 
 func _moverse() -> void:
-	move_and_collide(velocity)
+	var direccion = jugador.global_position - global_position
+	velocity = Vector2(radio, 0).rotated(direccion.angle())
+	
+	

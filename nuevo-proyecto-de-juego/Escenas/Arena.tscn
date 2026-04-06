@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://mra8ie23lb8h" path="res://Objetos/Jugador.tscn" id="1_ahw28"]
 [ext_resource type="PackedScene" uid="uid://btx86vsmw7fx5" path="res://Objetos/Pajaro.tscn" id="3_2tl2k"]
 [ext_resource type="Texture2D" uid="uid://uq1a4plxaxiy" path="res://Assets/fondo.jpg" id="3_attba"]
+[ext_resource type="Script" uid="uid://bpyfda2ot72i4" path="res://Escenas/Camara.gd" id="4_2tl2k"]
 
 [node name="Arena" type="Node2D" unique_id=1004500855]
 
@@ -10,12 +11,10 @@
 position = Vector2(-124, 383)
 scale = Vector2(3, 3)
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=718602288]
-scale = Vector2(0.33333334, 0.33333334)
-
-[node name="Jefe" parent="." unique_id=132458992 instance=ExtResource("3_2tl2k")]
+[node name="Jefe" parent="." unique_id=132458992 node_paths=PackedStringArray("jugador") instance=ExtResource("3_2tl2k")]
 position = Vector2(691, 287.00003)
 scale = Vector2(10, 10)
+jugador = NodePath("../CharacterBody2D")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=627926578]
 z_index = -1
@@ -25,3 +24,9 @@ offset_right = 2478.0
 offset_bottom = 1204.0
 texture = ExtResource("3_attba")
 stretch_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=718602288 node_paths=PackedStringArray("objetivo_1", "objetivo_2")]
+position = Vector2(-124, 383)
+script = ExtResource("4_2tl2k")
+objetivo_1 = NodePath("../Jefe")
+objetivo_2 = NodePath("../CharacterBody2D")

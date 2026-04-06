@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qr8svauct708"
-path="res://.godot/imported/Soldier-Attack03.png-e600dde852de476e9291034296547bab.ctex"
+uid="uid://cr8772mh5hrfw"
+path="res://.godot/imported/jump.png-883fd0866115403f32b8a354d2feeee3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Soldier-Attack03.png"
-dest_files=["res://.godot/imported/Soldier-Attack03.png-e600dde852de476e9291034296547bab.ctex"]
+source_file="res://Assets/Rouge/jump.png"
+dest_files=["res://.godot/imported/jump.png-883fd0866115403f32b8a354d2feeee3.ctex"]
 
 [params]
 
