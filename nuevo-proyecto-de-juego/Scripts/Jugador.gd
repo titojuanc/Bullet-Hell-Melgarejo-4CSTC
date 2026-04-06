@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const velocidad = 200.0
+const velocidad = 300.0
 
 @export var Slash = preload("res://Objetos/Slash.tscn")
 @onready var animador: AnimatedSprite2D = $AnimatedSprite2D
