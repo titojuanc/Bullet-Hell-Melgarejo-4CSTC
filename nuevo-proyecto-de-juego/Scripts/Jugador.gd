@@ -2,11 +2,14 @@ extends CharacterBody2D
 
 const velocidad = 300.0
 
+signal murio
+
 @export var vida = 3
-@export var Slash = preload("res://Objetos/Slash.tscn")
+@onready var Slash = preload("res://Objetos/Slash.tscn")
 @onready var animador: AnimatedSprite2D = $AnimatedSprite2D
 
 var atacando = false
+var muerto = false
 var dañado = false
 var en_cooldown = false
 @onready var cooldown: Timer = $Cooldown
@@ -26,8 +29,10 @@ func _physics_process(delta: float) -> void:
 		vida =- 1
 		animador.play("Danado")
 		if vida == 0:
+			muerto = true
 			animador.play("Muerte")
-		
+			murio.emit()
+			
 	if Input.is_action_pressed("attack"):
 		if !en_cooldown:
 			atacando = true

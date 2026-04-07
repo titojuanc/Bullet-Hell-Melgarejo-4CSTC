@@ -3,6 +3,7 @@ extends Camera2D
 @export var objetivo_1: CharacterBody2D
 @export var objetivo_2: CharacterBody2D
 
+
 var zoom_minimo = Vector2(0.5, 0.5)
 var zoom_maximo = Vector2(1.5, 1.5)
 var margen = 200
