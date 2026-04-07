@@ -44,12 +44,12 @@ func _on_cooldown_timeout() -> void:
 		ataque_cooldown.stop()
 		atacando = false
 		_resetear_canones()
-		timer.wait_time = 1
+		timer.wait_time = 0.2
 		timer.start()
 		_moverse()
 
 func _configurar_ataque() -> void:
-	var n = randi_range(1, 3)
+	var n = randi_range(1,3)
 	if n == 1:
 		ataque_seleccionado = 1
 		
@@ -70,11 +70,10 @@ func _configurar_ataque() -> void:
 		ataque_seleccionado = 3
 		
 		#configuracion del ataque 3:
-		canones = 1
-		grados_rotados = 45
+		canones = 3
+		grados_rotados = 0
 		timer.wait_time = 5
 		ataque_cooldown.wait_time = 0.2
-		
 	_generar_canones(canones)
 	timer.start()
 	ataque_cooldown.start()
@@ -116,6 +115,7 @@ func _ataque_3() -> void:
 	get_tree().root.add_child(bala)
 	bala.position = c.global_position
 	bala.rotation = c.global_rotation
+	
 	pass
 
 func _generar_canones(num_canones: int) -> void:
@@ -135,6 +135,7 @@ func _generar_canones(num_canones: int) -> void:
 func _resetear_canones() -> void:
 	for canon in rotor.get_children():
 		canon.queue_free()
+	rotor.rotation_degrees = 0
 
 func _rotar_canones() -> void:
 	var rotacion_actual = rotor.rotation_degrees + grados_rotados
