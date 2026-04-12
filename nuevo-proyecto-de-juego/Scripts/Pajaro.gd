@@ -8,6 +8,7 @@ var radio = 10
 var disparo = preload("res://Objetos/Bala.tscn")
 var atacando = false
 var ataque_seleccionado
+var velocidad = 5
 
 #variables de nodos hijos
 @onready var ataque_cooldown = $Ataque_Cooldown
@@ -44,7 +45,7 @@ func _on_cooldown_timeout() -> void:
 		ataque_cooldown.stop()
 		atacando = false
 		_resetear_canones()
-		timer.wait_time = 0.2
+		timer.wait_time = 2
 		timer.start()
 		_moverse()
 
@@ -144,6 +145,6 @@ func _rotar_canones() -> void:
 
 func _moverse() -> void:
 	var direccion = jugador.global_position - global_position
-	velocity = Vector2(radio, 0).rotated(direccion.angle())
+	velocity = Vector2(5, 0).rotated(direccion.angle())
 	
 	

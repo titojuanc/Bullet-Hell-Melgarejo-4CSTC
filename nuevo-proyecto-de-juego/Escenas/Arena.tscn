@@ -4,29 +4,131 @@
 [ext_resource type="PackedScene" uid="uid://btx86vsmw7fx5" path="res://Objetos/Pajaro.tscn" id="3_2tl2k"]
 [ext_resource type="Texture2D" uid="uid://uq1a4plxaxiy" path="res://Assets/fondo.jpg" id="3_attba"]
 [ext_resource type="Script" uid="uid://bpyfda2ot72i4" path="res://Escenas/Camara.gd" id="4_2tl2k"]
+[ext_resource type="PackedScene" uid="uid://c6bie7wk86n53" path="res://Objetos/Pared.tscn" id="5_3laqc"]
+[ext_resource type="Texture2D" uid="uid://cdxatq58005r2" path="res://Assets/Árboles/frame_009.png" id="6_bicrq"]
 
 [node name="Arena" type="Node2D" unique_id=1004500855]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=718602288 node_paths=PackedStringArray("objetivo_1", "objetivo_2")]
-position = Vector2(-124, 383)
-script = ExtResource("4_2tl2k")
-objetivo_1 = NodePath("../Jefe")
-objetivo_2 = NodePath("../CharacterBody2D")
-
-[node name="CharacterBody2D" parent="." unique_id=1047151213 instance=ExtResource("1_ahw28")]
-position = Vector2(-124, 383)
+[node name="Jugador" parent="." unique_id=1047151213 instance=ExtResource("1_ahw28")]
+position = Vector2(-1520.0001, -56)
 scale = Vector2(3, 3)
 
+[node name="Cámara" type="Camera2D" parent="Jugador" unique_id=718602288 node_paths=PackedStringArray("objetivo_1", "objetivo_2")]
+limit_left = -1800
+limit_top = -400
+limit_bottom = 200
+position_smoothing_enabled = true
+script = ExtResource("4_2tl2k")
+objetivo_1 = NodePath("../../Jefe")
+objetivo_2 = NodePath("..")
+
 [node name="Jefe" parent="." unique_id=132458992 node_paths=PackedStringArray("jugador") instance=ExtResource("3_2tl2k")]
-position = Vector2(691, 287.00003)
+position = Vector2(955, -72.99994)
 scale = Vector2(10, 10)
-jugador = NodePath("../CharacterBody2D")
+jugador = NodePath("../Jugador")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=627926578]
 z_index = -1
-offset_left = -1190.0
-offset_top = -581.0
-offset_right = 2478.0
-offset_bottom = 1204.0
+offset_left = -1925.0
+offset_top = -1167.0
+offset_right = 1775.0
+offset_bottom = 1042.0
 texture = ExtResource("3_attba")
 stretch_mode = 1
+
+[node name="Arboles" type="Node2D" parent="." unique_id=1622060939]
+
+[node name="Pasillo_arriba" type="TextureRect" parent="Arboles" unique_id=416082754]
+offset_left = -1762.0
+offset_top = -1198.0
+offset_right = -485.0
+offset_bottom = -322.0
+texture = ExtResource("6_bicrq")
+stretch_mode = 1
+
+[node name="Pasillo_abajo" type="TextureRect" parent="Arboles" unique_id=632958551]
+offset_left = -1791.0
+offset_top = 173.0
+offset_right = -514.0
+offset_bottom = 1049.0
+texture = ExtResource("6_bicrq")
+stretch_mode = 1
+
+[node name="Arena_arriba" type="TextureRect" parent="Arboles" unique_id=351946462]
+offset_left = -492.0
+offset_top = -1172.0
+offset_right = 1772.0
+offset_bottom = -916.0
+texture = ExtResource("6_bicrq")
+stretch_mode = 1
+
+[node name="Arena_abajo" type="TextureRect" parent="Arboles" unique_id=1608541795]
+offset_left = -516.0
+offset_top = 772.0
+offset_right = 1748.0
+offset_bottom = 1031.0
+texture = ExtResource("6_bicrq")
+stretch_mode = 1
+
+[node name="Arena_derecha" type="TextureRect" parent="Arboles" unique_id=1602800863]
+offset_left = 1518.0
+offset_top = -1031.0
+offset_right = 1777.0
+offset_bottom = 906.0
+texture = ExtResource("6_bicrq")
+stretch_mode = 1
+
+[node name="Paredes" type="Node2D" parent="." unique_id=1440565548]
+
+[node name="ParedPasillo1" parent="Paredes" unique_id=1646558566 instance=ExtResource("5_3laqc")]
+light_mask = 9
+visibility_layer = 9
+position = Vector2(-1113, -309)
+
+[node name="ParedPasillo2" parent="Paredes" unique_id=306943046 instance=ExtResource("5_3laqc")]
+light_mask = 9
+visibility_layer = 9
+position = Vector2(-1119, 152)
+
+[node name="Arena_abajo" parent="Paredes" unique_id=1969942151 instance=ExtResource("5_3laqc")]
+light_mask = 9
+visibility_layer = 9
+position = Vector2(471, 801)
+rotation = -3.1415925
+scale = Vector2(2, 2)
+
+[node name="ParedPasillo" parent="Paredes" unique_id=2091362095 instance=ExtResource("5_3laqc")]
+light_mask = 9
+visibility_layer = 9
+position = Vector2(-1727, -80)
+rotation = 1.5707964
+
+[node name="Arena_arriba2" parent="Paredes" unique_id=553357047 instance=ExtResource("5_3laqc")]
+light_mask = 9
+visibility_layer = 9
+position = Vector2(511, -940)
+rotation = -3.1415925
+scale = Vector2(2, 2)
+
+[node name="Arena_derecha" parent="Paredes" unique_id=1063903783 instance=ExtResource("5_3laqc")]
+light_mask = 9
+visibility_layer = 9
+position = Vector2(1542, -177)
+rotation = 1.5707964
+scale = Vector2(2, 2)
+
+[node name="Arena_izq_arriba" parent="Paredes" unique_id=1798672495 instance=ExtResource("5_3laqc")]
+light_mask = 9
+visibility_layer = 9
+position = Vector2(-506, -611)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[node name="Arena_izq_abajo" parent="Paredes" unique_id=965203422 instance=ExtResource("5_3laqc")]
+light_mask = 9
+visibility_layer = 9
+position = Vector2(-524, 469)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+
+[connection signal="entro_arena" from="Jugador" to="Jugador/Cámara" method="_on_jugador_entro_arena"]

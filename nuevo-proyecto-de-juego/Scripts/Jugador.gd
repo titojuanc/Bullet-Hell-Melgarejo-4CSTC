@@ -3,6 +3,7 @@ extends CharacterBody2D
 const velocidad = 300.0
 
 signal murio
+signal entro_arena
 
 @export var vida = 3
 @onready var Slash = preload("res://Objetos/Slash.tscn")
@@ -22,7 +23,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	#Le creo un vector de movimiento para hacerla más fácil
-	var direccion := Vector2(Input.get_axis("left", "right"),Input.get_axis("up", "down")).normalized()
+	var direccion = Vector2(Input.get_axis("left", "right"),Input.get_axis("up", "down")).normalized()
 	velocity = direccion * velocidad
 	var collsion = move_and_collide(velocity * delta)
 	if collsion:
@@ -47,6 +48,10 @@ func _physics_process(delta: float) -> void:
 	if atacando:
 			return 
 	animador.play("Walk" if direccion != Vector2.ZERO else "Idle")
+
+func _process(delta: float) -> void:
+	if global_position.x > -500:
+		entro_arena.emit()
 
 func _on_ataque_terminado() -> void:
 	if animador.animation == "Shoot":
