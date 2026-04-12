@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c7pwl8ns8qv6d"]
+
+[ext_resource type="Script" uid="uid://d25111g5eda3q" path="res://Scripts/Puerta.gd" id="1_e40od"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pphl5"]
+size = Vector2(21.875, 805)
+
+[node name="Area2D" type="StaticBody2D" unique_id=43390619]
+script = ExtResource("1_e40od")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=769485279]
+shape = SubResource("RectangleShape2D_pphl5")

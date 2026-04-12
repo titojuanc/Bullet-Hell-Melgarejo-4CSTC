@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bpyfda2ot72i4" path="res://Escenas/Camara.gd" id="4_2tl2k"]
 [ext_resource type="PackedScene" uid="uid://c6bie7wk86n53" path="res://Objetos/Pared.tscn" id="5_3laqc"]
 [ext_resource type="Texture2D" uid="uid://cdxatq58005r2" path="res://Assets/Árboles/frame_009.png" id="6_bicrq"]
+[ext_resource type="PackedScene" uid="uid://c7pwl8ns8qv6d" path="res://Objetos/Puerta.tscn" id="7_aprw6"]
 
 [node name="Arena" type="Node2D" unique_id=1004500855]
 
@@ -39,17 +40,17 @@ stretch_mode = 1
 [node name="Arboles" type="Node2D" parent="." unique_id=1622060939]
 
 [node name="Pasillo_arriba" type="TextureRect" parent="Arboles" unique_id=416082754]
-offset_left = -1762.0
+offset_left = -1738.0
 offset_top = -1198.0
-offset_right = -485.0
+offset_right = -461.0
 offset_bottom = -322.0
 texture = ExtResource("6_bicrq")
 stretch_mode = 1
 
 [node name="Pasillo_abajo" type="TextureRect" parent="Arboles" unique_id=632958551]
-offset_left = -1791.0
+offset_left = -1727.0
 offset_top = 173.0
-offset_right = -514.0
+offset_right = -450.0
 offset_bottom = 1049.0
 texture = ExtResource("6_bicrq")
 stretch_mode = 1
@@ -83,12 +84,12 @@ stretch_mode = 1
 [node name="ParedPasillo1" parent="Paredes" unique_id=1646558566 instance=ExtResource("5_3laqc")]
 light_mask = 9
 visibility_layer = 9
-position = Vector2(-1113, -309)
+position = Vector2(-1073, -309)
 
 [node name="ParedPasillo2" parent="Paredes" unique_id=306943046 instance=ExtResource("5_3laqc")]
 light_mask = 9
 visibility_layer = 9
-position = Vector2(-1119, 152)
+position = Vector2(-1071, 152)
 
 [node name="Arena_abajo" parent="Paredes" unique_id=1969942151 instance=ExtResource("5_3laqc")]
 light_mask = 9
@@ -100,7 +101,7 @@ scale = Vector2(2, 2)
 [node name="ParedPasillo" parent="Paredes" unique_id=2091362095 instance=ExtResource("5_3laqc")]
 light_mask = 9
 visibility_layer = 9
-position = Vector2(-1727, -80)
+position = Vector2(-1711, -80)
 rotation = 1.5707964
 
 [node name="Arena_arriba2" parent="Paredes" unique_id=553357047 instance=ExtResource("5_3laqc")]
@@ -120,15 +121,21 @@ scale = Vector2(2, 2)
 [node name="Arena_izq_arriba" parent="Paredes" unique_id=1798672495 instance=ExtResource("5_3laqc")]
 light_mask = 9
 visibility_layer = 9
-position = Vector2(-506, -611)
+position = Vector2(-469, -611)
 rotation = 1.5707964
 scale = Vector2(0.5, 0.5)
 
 [node name="Arena_izq_abajo" parent="Paredes" unique_id=965203422 instance=ExtResource("5_3laqc")]
 light_mask = 9
 visibility_layer = 9
-position = Vector2(-524, 469)
+position = Vector2(-460, 469)
 rotation = 1.5707964
 scale = Vector2(0.5, 0.5)
 
+[node name="Puerta" parent="." unique_id=1122195849 instance=ExtResource("7_aprw6")]
+position = Vector2(-515, -93)
+collision_layer = 0
+collision_mask = 0
+
 [connection signal="entro_arena" from="Jugador" to="Jugador/Cámara" method="_on_jugador_entro_arena"]
+[connection signal="entro_arena" from="Jugador" to="Puerta" method="_on_jugador_entro_arena"]
