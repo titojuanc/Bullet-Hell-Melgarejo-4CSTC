@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://btx86vsmw7fx5"]
 
-[ext_resource type="Script" uid="uid://8dnhulfgldns" path="res://Scripts/Pajaro.gd" id="1_ii7w6"]
+[ext_resource type="Script" uid="uid://8dnhulfgldns" path="res://Scripts/Jefe.gd" id="1_ii7w6"]
 [ext_resource type="Texture2D" uid="uid://brhg22co3fy1m" path="res://Assets/flying-creature-cycle-skin.png" id="1_t04py"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5akuo"]
@@ -63,9 +63,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nf8xo"]
 size = Vector2(25.75, 22.25)
 
-[node name="Jefe" type="CharacterBody2D" unique_id=132458992]
+[node name="Jefe" type="CharacterBody2D" unique_id=132458992 groups=["Jefe"]]
 collision_layer = 2
-collision_mask = 4
+collision_mask = 5
 script = ExtResource("1_ii7w6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2040706559]

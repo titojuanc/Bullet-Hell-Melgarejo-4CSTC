@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bxfm3j8lylm0v"]
 
 [ext_resource type="PackedScene" uid="uid://mra8ie23lb8h" path="res://Objetos/Jugador.tscn" id="1_ahw28"]
-[ext_resource type="PackedScene" uid="uid://btx86vsmw7fx5" path="res://Objetos/Pajaro.tscn" id="3_2tl2k"]
+[ext_resource type="PackedScene" uid="uid://btx86vsmw7fx5" path="res://Objetos/Jefe.tscn" id="3_2tl2k"]
 [ext_resource type="Texture2D" uid="uid://uq1a4plxaxiy" path="res://Assets/fondo.jpg" id="3_attba"]
 [ext_resource type="Script" uid="uid://bpyfda2ot72i4" path="res://Escenas/Camara.gd" id="4_2tl2k"]
 [ext_resource type="PackedScene" uid="uid://c6bie7wk86n53" path="res://Objetos/Pared.tscn" id="5_3laqc"]

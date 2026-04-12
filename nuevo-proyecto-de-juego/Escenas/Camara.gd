@@ -10,6 +10,8 @@ func _process(delta: float) -> void:
 		return
 	
 	if not is_instance_valid(jugador):
+		position = jefe.global_position
+		zoom = Vector2.ONE
 		return
 	
 	if not is_instance_valid(jefe):

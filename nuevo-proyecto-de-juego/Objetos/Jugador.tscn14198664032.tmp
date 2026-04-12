@@ -137,7 +137,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_odyah")
 }],
-"loop": false,
+"loop": true,
 "name": &"Danado",
 "speed": 4.0
 }, {
@@ -177,9 +177,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_y6s1f")
 }],
-"loop": false,
+"loop": true,
 "name": &"Muerte",
-"speed": 2.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -234,8 +234,8 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1047151213 groups=["Jugador"]]
-collision_mask = 10
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1047151213]
+collision_mask = 8
 script = ExtResource("1_67xvx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1360053986]
@@ -244,12 +244,8 @@ shape = SubResource("CircleShape2D_4i53u")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=486488990]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_qw48o")
-animation = &"Muerte"
+animation = &"Danado"
 autoplay = "Idle"
+frame_progress = 0.37180054
 
 [node name="Cooldown" type="Timer" parent="." unique_id=1503192725]
-
-[node name="Stun" type="Timer" parent="." unique_id=765099156]
-one_shot = true
-
-[connection signal="timeout" from="Stun" to="." method="_on_stun_timeout"]
