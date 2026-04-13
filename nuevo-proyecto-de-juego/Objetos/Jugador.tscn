@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://mra8ie23lb8h"]
 
-[ext_resource type="Script" uid="uid://bnvg82wpiyb56" path="res://Scripts/Jugador.gd" id="1_67xvx"]
+[ext_resource type="Script" uid="uid://d1qkl0nk5hmoe" path="res://Bases/Jugador.gd" id="1_j1bul"]
 [ext_resource type="Texture2D" uid="uid://b4xoh6pphok33" path="res://Assets/Soldier/Soldier-Idle.png" id="1_w80r8"]
 [ext_resource type="Texture2D" uid="uid://ot8202p0xhkc" path="res://Assets/Soldier/Soldier-Walk.png" id="2_67xvx"]
 [ext_resource type="Texture2D" uid="uid://cvu1smp4j65xo" path="res://Assets/Soldier/Soldier-Hurt.png" id="2_rygux"]
@@ -236,7 +236,7 @@ animations = [{
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1047151213 groups=["Jugador"]]
 collision_mask = 10
-script = ExtResource("1_67xvx")
+script = ExtResource("1_j1bul")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1360053986]
 shape = SubResource("CircleShape2D_4i53u")

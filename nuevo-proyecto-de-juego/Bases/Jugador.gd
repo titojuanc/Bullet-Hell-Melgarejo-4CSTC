@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+#señales para comunicarse con otros objetos
 signal murio
 signal entro_arena
 signal recibio_dano
@@ -10,6 +11,7 @@ signal recibio_dano
 @export var Slash = preload("res://Objetos/Slash.tscn")
 @export var ataque_cooldown: float
 
+#estados del pj
 var atacando = false
 var muerto = false
 var dañado = false
@@ -17,6 +19,8 @@ var en_cooldown = false
 var stun = false
 var en_combate = false 
 var vida = vidamax
+
+#hijos necesarios a modificar
 @onready var animador: AnimatedSprite2D = $AnimatedSprite2D
 @onready var cooldown: Timer = $Cooldown
 @onready var tiempo_stun: Timer = $Stun
@@ -28,6 +32,11 @@ func _ready() -> void:
 	cooldown.timeout.connect(func(): en_cooldown = false)
 	#para setear la barra
 	recibio_dano.emit(vidamax, vidamax)
+
+func _process(delta: float) -> void:
+	if global_position.x > -500 and en_combate == false:
+		entro_arena.emit()
+		en_combate=true
 
 func _physics_process(delta: float) -> void:
 	#prioridad 1: muerto
@@ -70,19 +79,6 @@ func _physics_process(delta: float) -> void:
 	#para poder chequear de manera mas simple qe animacion hace
 	animador.play("Walk" if direccion != Vector2.ZERO else "Idle")
 
-func _process(delta: float) -> void:
-	if global_position.x > -500 and en_combate == false:
-		entro_arena.emit()
-		en_combate=true
-
-func _on_ataque_terminado() -> void:
-	if animador.animation == "Shoot":
-		atacando = false
-
-func _on_stun_timeout() -> void:
-	stun = false
-	pass
-
 func recibir_daño() -> void:
 	vida -= 1
 	tiempo_stun.start()
@@ -95,3 +91,11 @@ func recibir_daño() -> void:
 func morir() -> void:
 	muerto = true
 	murio.emit()
+
+func _on_ataque_terminado() -> void:
+	if animador.animation == "Shoot":
+		atacando = false
+
+func _on_stun_timeout() -> void:
+	stun = false
+	pass

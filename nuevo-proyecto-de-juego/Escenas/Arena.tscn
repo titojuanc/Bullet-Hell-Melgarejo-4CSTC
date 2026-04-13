@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://j2gqjr3pfmxi" path="res://Utils/Camara.tscn" id="2_36p52"]
 [ext_resource type="PackedScene" uid="uid://5qdv5wrrnsdc" path="res://Objetos/Jefe.tscn" id="3_aprw6"]
 [ext_resource type="Texture2D" uid="uid://uq1a4plxaxiy" path="res://Assets/fondo.jpg" id="3_attba"]
-[ext_resource type="Script" uid="uid://8dnhulfgldns" path="res://Scripts/Jefe.gd" id="4_36p52"]
+[ext_resource type="Script" uid="uid://8dnhulfgldns" path="res://Scripts/Macaw.gd" id="4_36p52"]
 [ext_resource type="PackedScene" path="res://Objetos/Pared.tscn" id="5_3laqc"]
 [ext_resource type="Texture2D" uid="uid://cdxatq58005r2" path="res://Assets/Árboles/frame_009.png" id="6_bicrq"]
 [ext_resource type="PackedScene" uid="uid://c7pwl8ns8qv6d" path="res://Objetos/Puerta.tscn" id="7_aprw6"]
