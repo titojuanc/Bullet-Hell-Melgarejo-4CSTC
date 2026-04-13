@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cvd70hlpulisq"]
+
+[node name="TextureRect" type="TextureRect" unique_id=1387232135]
+offset_right = 80.0
+offset_bottom = 80.0

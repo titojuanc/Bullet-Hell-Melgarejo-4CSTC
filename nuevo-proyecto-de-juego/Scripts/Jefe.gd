@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 signal murio
+signal recibir_daño
 
 #variables para los ataques (cambian según el ataque)
 var grados_rotados
@@ -14,22 +15,23 @@ var ataque_seleccionado
 @onready var ataque_cooldown = $Ataque_Cooldown
 @onready var timer = $Cooldown
 @onready var rotor = $Rotor
+@onready var animador = $AnimatedSprite2D
 
 #variables con export para parametrizar
-@export var vida = 10
+@export var vidamax: int
+var vida=10
 @export var jugador: CharacterBody2D
 @export var disparo = preload("res://Objetos/Bala.tscn")
 @export var velocidad = 5
 
 func _ready() -> void:
+	recibir_daño.emit(vida, vidamax)
 	timer.wait_time = cooldown
 	timer.start()
 	pass
 
 func _process(delta: float) -> void:
-	if vida == 0:
-		queue_free()
-
+	pass
 func _physics_process(delta: float) -> void:
 	var colision = move_and_collide(velocity)
 	if colision:
@@ -37,6 +39,11 @@ func _physics_process(delta: float) -> void:
 			var objeto = colision.get_collider()
 			objeto.queue_free()
 			vida -= 1
+			recibir_daño.emit(vida, vidamax)
+			print(vida)
+			if vida == 0:
+				murio.emit()
+				queue_free()
 
 func _on_cooldown_timeout() -> void:
 	if atacando == false:
@@ -148,5 +155,7 @@ func _rotar_canones() -> void:
 func _moverse() -> void:
 	var direccion = jugador.global_position - global_position
 	velocity = Vector2(5, 0).rotated(direccion.angle())
+	if direccion.x != 0:
+		animador.flip_h = direccion.x < 0
 	
 	

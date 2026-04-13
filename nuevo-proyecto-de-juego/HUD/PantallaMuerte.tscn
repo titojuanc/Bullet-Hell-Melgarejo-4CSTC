@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://csthi064b0x0u"]
 
 [ext_resource type="Texture2D" uid="uid://bpp41byrlehg3" path="res://Assets/You-Died.png" id="1_l0387"]
-[ext_resource type="Script" uid="uid://digdgrek71ucj" path="res://Escenas/pantalla_muerte.gd" id="2_vqlah"]
+[ext_resource type="Script" uid="uid://digdgrek71ucj" path="res://Scripts/pantalla_muerte.gd" id="2_vqlah"]
 
 [node name="PantallaDeMuerte" type="TextureRect" unique_id=265242789]
 offset_right = 1152.0

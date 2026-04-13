@@ -1,12 +1,16 @@
 [gd_scene format=3 uid="uid://bxfm3j8lylm0v"]
 
 [ext_resource type="PackedScene" uid="uid://mra8ie23lb8h" path="res://Objetos/Jugador.tscn" id="1_ahw28"]
-[ext_resource type="PackedScene" uid="uid://btx86vsmw7fx5" path="res://Objetos/Jefe.tscn" id="3_2tl2k"]
+[ext_resource type="PackedScene" uid="uid://j2gqjr3pfmxi" path="res://Utils/Camara.tscn" id="2_36p52"]
+[ext_resource type="PackedScene" uid="uid://5qdv5wrrnsdc" path="res://Objetos/Jefe.tscn" id="3_aprw6"]
 [ext_resource type="Texture2D" uid="uid://uq1a4plxaxiy" path="res://Assets/fondo.jpg" id="3_attba"]
-[ext_resource type="Script" uid="uid://bpyfda2ot72i4" path="res://Escenas/Camara.gd" id="4_2tl2k"]
-[ext_resource type="PackedScene" uid="uid://c6bie7wk86n53" path="res://Objetos/Pared.tscn" id="5_3laqc"]
+[ext_resource type="Script" uid="uid://8dnhulfgldns" path="res://Scripts/Jefe.gd" id="4_36p52"]
+[ext_resource type="PackedScene" path="res://Objetos/Pared.tscn" id="5_3laqc"]
 [ext_resource type="Texture2D" uid="uid://cdxatq58005r2" path="res://Assets/Árboles/frame_009.png" id="6_bicrq"]
 [ext_resource type="PackedScene" uid="uid://c7pwl8ns8qv6d" path="res://Objetos/Puerta.tscn" id="7_aprw6"]
+[ext_resource type="PackedScene" uid="uid://bgpaf6ujrrl31" path="res://HUD/PlayerBar.tscn" id="10_0obil"]
+[ext_resource type="PackedScene" uid="uid://bywilqnv0vj6t" path="res://Utils/BossBar.tscn" id="11_0obil"]
+[ext_resource type="PackedScene" uid="uid://cvd70hlpulisq" path="res://HUD/PlayerIcon.tscn" id="11_8etnf"]
 
 [node name="Arena" type="Node2D" unique_id=1004500855]
 
@@ -14,18 +18,15 @@
 position = Vector2(-1520.0001, -56)
 scale = Vector2(3, 3)
 
-[node name="Cámara" type="Camera2D" parent="Jugador" unique_id=718602288 node_paths=PackedStringArray("jugador", "jefe")]
-limit_left = -1800
-limit_top = -400
-limit_bottom = 200
-position_smoothing_enabled = true
-script = ExtResource("4_2tl2k")
+[node name="Cámara" parent="Jugador" unique_id=1402893975 node_paths=PackedStringArray("jugador", "jefe") instance=ExtResource("2_36p52")]
 jugador = NodePath("..")
 jefe = NodePath("../../Jefe")
 
-[node name="Jefe" parent="." unique_id=132458992 node_paths=PackedStringArray("jugador") instance=ExtResource("3_2tl2k")]
-position = Vector2(955, -72.99994)
+[node name="Jefe" parent="." unique_id=132458992 node_paths=PackedStringArray("jugador") instance=ExtResource("3_aprw6")]
+position = Vector2(611, -9)
 scale = Vector2(10, 10)
+script = ExtResource("4_36p52")
+vidamax = 10
 jugador = NodePath("../Jugador")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=627926578]
@@ -137,5 +138,19 @@ position = Vector2(-515, -93)
 collision_layer = 0
 collision_mask = 0
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1718748443]
+
+[node name="BossBar" parent="CanvasLayer" unique_id=619014746 instance=ExtResource("11_0obil")]
+visible = false
+self_modulate = Color(1, 1, 1, 0.81960785)
+
+[node name="PlayerBar" parent="CanvasLayer" unique_id=356546910 instance=ExtResource("10_0obil")]
+
+[node name="TextureRect" parent="CanvasLayer" unique_id=1387232135 instance=ExtResource("11_8etnf")]
+
 [connection signal="entro_arena" from="Jugador" to="Jugador/Cámara" method="_on_jugador_entro_arena"]
 [connection signal="entro_arena" from="Jugador" to="Puerta" method="_on_jugador_entro_arena"]
+[connection signal="entro_arena" from="Jugador" to="CanvasLayer/BossBar" method="_on_jugador_entro_arena"]
+[connection signal="recibio_dano" from="Jugador" to="CanvasLayer/PlayerBar" method="_on_jugador_recibio_dano"]
+[connection signal="murio" from="Jefe" to="CanvasLayer/BossBar" method="_on_jefe_murio"]
+[connection signal="recibir_daño" from="Jefe" to="CanvasLayer/BossBar" method="_on_jefe_recibir_daño"]

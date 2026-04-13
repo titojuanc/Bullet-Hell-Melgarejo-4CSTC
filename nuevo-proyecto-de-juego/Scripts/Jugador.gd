@@ -2,10 +2,11 @@ extends CharacterBody2D
 
 signal murio
 signal entro_arena
+signal recibio_dano
 
 #estas variables cambian según el personaje elegido.
 @export var velocidad = 300.0
-@export var vida = 3
+@export var vidamax = 3
 @export var Slash = preload("res://Objetos/Slash.tscn")
 
 var atacando = false
@@ -13,7 +14,8 @@ var muerto = false
 var dañado = false
 var en_cooldown = false
 var stun = false
-
+var en_combate = false 
+var vida = vidamax
 @onready var animador: AnimatedSprite2D = $AnimatedSprite2D
 @onready var cooldown: Timer = $Cooldown
 @onready var tiempo_stun: Timer = $Stun
@@ -23,6 +25,8 @@ func _ready() -> void:
 	cooldown.one_shot = true
 	cooldown.wait_time = 0.8  
 	cooldown.timeout.connect(func(): en_cooldown = false)
+	#para setear la barra
+	recibio_dano.emit(vidamax, vidamax)
 
 func _physics_process(delta: float) -> void:
 	if muerto:
@@ -61,24 +65,28 @@ func _physics_process(delta: float) -> void:
 	animador.play("Walk" if direccion != Vector2.ZERO else "Idle")
 
 func _process(delta: float) -> void:
-	if global_position.x > -500:
+	if global_position.x > -500 and en_combate == false:
 		entro_arena.emit()
+		en_combate=true
+		
 
 func _on_ataque_terminado() -> void:
 	if animador.animation == "Shoot":
 		atacando = false
 
-
 func _on_stun_timeout() -> void:
 	stun = false
-	pass # Replace with function body.
+	pass
 
 func recibir_daño() -> void:
 	vida -= 1
-	stun = true
 	tiempo_stun.start()
-	print("recibí daño")
-	if vida == 0:
-		muerto = true
-		murio.emit()
-		print("mori")
+	recibio_dano.emit(vida, vidamax)
+	if vida != 0:
+		stun = true
+	elif vida == 0:
+		morir()
+
+func morir() -> void:
+	muerto = true
+	murio.emit()

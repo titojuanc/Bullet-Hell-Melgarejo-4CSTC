@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bgpaf6ujrrl31"]
+
+[ext_resource type="Script" uid="uid://cxmq46vm7pbhg" path="res://Scripts/PlayerBar.gd" id="1_4orr1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4orr1"]
+bg_color = Color(0.4392157, 0, 0.03137255, 1)
+skew = Vector2(1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n8g3c"]
+bg_color = Color(0.8901961, 0, 0.03137255, 1)
+skew = Vector2(1, 0)
+
+[node name="ProgressBar" type="ProgressBar" unique_id=356546910]
+offset_left = 96.0
+offset_top = 12.0
+offset_right = 396.0
+offset_bottom = 39.0
+theme_override_styles/background = SubResource("StyleBoxFlat_4orr1")
+theme_override_styles/fill = SubResource("StyleBoxFlat_n8g3c")
+max_value = 3.0
+step = 1.0
+value = 3.0
+show_percentage = false
+script = ExtResource("1_4orr1")
