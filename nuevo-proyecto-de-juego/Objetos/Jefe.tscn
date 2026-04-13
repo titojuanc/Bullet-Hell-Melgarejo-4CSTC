@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://5qdv5wrrnsdc"]
 
-[ext_resource type="Script" path="res://Scripts/Pajaro.gd" id="1_ii7w6"]
 [ext_resource type="Texture2D" uid="uid://brhg22co3fy1m" path="res://Assets/flying-creature-cycle-skin.png" id="1_t04py"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5akuo"]
@@ -66,7 +65,6 @@ size = Vector2(25.75, 22.25)
 [node name="Jefe" type="CharacterBody2D" unique_id=132458992 groups=["Jefe"]]
 collision_layer = 2
 collision_mask = 5
-script = ExtResource("1_ii7w6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2040706559]
 texture_filter = 1
