@@ -11,4 +11,4 @@ func _process(delta: float) -> void:
 func _on_jugador_recibio_dano(vida, vidamax) -> void:
 	max_value = vidamax
 	value = vida
-	pass # Replace with function body.
+	pass 

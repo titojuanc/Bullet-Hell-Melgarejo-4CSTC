@@ -8,6 +8,7 @@ signal recibio_dano
 @export var velocidad = 300.0
 @export var vidamax = 3
 @export var Slash = preload("res://Objetos/Slash.tscn")
+@export var ataque_cooldown: float
 
 var atacando = false
 var muerto = false
@@ -23,12 +24,13 @@ var vida = vidamax
 func _ready() -> void:
 	animador.animation_finished.connect(_on_ataque_terminado)
 	cooldown.one_shot = true
-	cooldown.wait_time = 0.8  
+	cooldown.wait_time = ataque_cooldown
 	cooldown.timeout.connect(func(): en_cooldown = false)
 	#para setear la barra
 	recibio_dano.emit(vidamax, vidamax)
 
 func _physics_process(delta: float) -> void:
+	#prioridad 1: muerto
 	if muerto:
 		animador.play("Muerte")
 		return
@@ -46,11 +48,13 @@ func _physics_process(delta: float) -> void:
 			
 	if direccion.x != 0:
 		animador.flip_h = direccion.x < 0
-	
+		
+	#prioridad 2: stun
 	if stun:
 		animador.play("Danado")
 		return
 	
+	#prioridad 3: ataque
 	if Input.is_action_pressed("attack"):
 		if !en_cooldown:
 			atacando = true
@@ -60,15 +64,16 @@ func _physics_process(delta: float) -> void:
 			animador.play("Shoot")
 			en_cooldown = true
 			cooldown.start()
+	#bloquea el ataque de vuelta, medido por cooldown
 	if atacando:
 			return 
+	#para poder chequear de manera mas simple qe animacion hace
 	animador.play("Walk" if direccion != Vector2.ZERO else "Idle")
 
 func _process(delta: float) -> void:
 	if global_position.x > -500 and en_combate == false:
 		entro_arena.emit()
 		en_combate=true
-		
 
 func _on_ataque_terminado() -> void:
 	if animador.animation == "Shoot":

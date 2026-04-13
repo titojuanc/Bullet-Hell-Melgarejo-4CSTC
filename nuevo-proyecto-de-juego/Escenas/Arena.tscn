@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bgpaf6ujrrl31" path="res://HUD/PlayerBar.tscn" id="10_0obil"]
 [ext_resource type="PackedScene" uid="uid://bywilqnv0vj6t" path="res://Utils/BossBar.tscn" id="11_0obil"]
 [ext_resource type="PackedScene" uid="uid://cvd70hlpulisq" path="res://HUD/PlayerIcon.tscn" id="11_8etnf"]
+[ext_resource type="PackedScene" uid="uid://csthi064b0x0u" path="res://HUD/PantallaMuerte.tscn" id="12_8etnf"]
 
 [node name="Arena" type="Node2D" unique_id=1004500855]
 
@@ -148,9 +149,13 @@ self_modulate = Color(1, 1, 1, 0.81960785)
 
 [node name="TextureRect" parent="CanvasLayer" unique_id=1387232135 instance=ExtResource("11_8etnf")]
 
+[node name="PantallaDeMuerte" parent="CanvasLayer" unique_id=265242789 instance=ExtResource("12_8etnf")]
+self_modulate = Color(1, 1, 1, 0)
+
 [connection signal="entro_arena" from="Jugador" to="Jugador/Cámara" method="_on_jugador_entro_arena"]
 [connection signal="entro_arena" from="Jugador" to="Puerta" method="_on_jugador_entro_arena"]
 [connection signal="entro_arena" from="Jugador" to="CanvasLayer/BossBar" method="_on_jugador_entro_arena"]
+[connection signal="murio" from="Jugador" to="CanvasLayer/PantallaDeMuerte" method="_on_jugador_murio"]
 [connection signal="recibio_dano" from="Jugador" to="CanvasLayer/PlayerBar" method="_on_jugador_recibio_dano"]
 [connection signal="murio" from="Jefe" to="CanvasLayer/BossBar" method="_on_jefe_murio"]
 [connection signal="recibir_daño" from="Jefe" to="CanvasLayer/BossBar" method="_on_jefe_recibir_daño"]

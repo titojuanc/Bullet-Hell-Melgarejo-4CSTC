@@ -2,6 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://bpp41byrlehg3" path="res://Assets/You-Died.png" id="1_l0387"]
 [ext_resource type="Script" uid="uid://digdgrek71ucj" path="res://Scripts/pantalla_muerte.gd" id="2_vqlah"]
+[ext_resource type="PackedScene" uid="uid://dq7icxby5ibq" path="res://HUD/pantalla_negra.tscn" id="3_2gwhx"]
+[ext_resource type="FontFile" uid="uid://cwi1b6dgv0fan" path="res://Utils/Minecraftia-Regular.ttf" id="4_je7qb"]
+[ext_resource type="Script" uid="uid://brvr405rgaovv" path="res://Scripts/Reiniciar.gd" id="5_vpevk"]
+[ext_resource type="Script" uid="uid://boe1usl8ljvk6" path="res://Scripts/Salir.gd" id="6_vpevk"]
 
 [node name="PantallaDeMuerte" type="TextureRect" unique_id=265242789]
 offset_right = 1152.0
@@ -9,4 +13,36 @@ offset_bottom = 648.0
 texture = ExtResource("1_l0387")
 script = ExtResource("2_vqlah")
 
-[node name="Timer" type="Timer" parent="." unique_id=1198454192]
+[node name="PantallaNegra" parent="." unique_id=1143139139 instance=ExtResource("3_2gwhx")]
+layout_mode = 0
+
+[node name="Botones" type="Control" parent="." unique_id=1597400062]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Reiniciar" type="Button" parent="Botones" unique_id=1495199550]
+visible = false
+layout_mode = 0
+offset_left = 273.0
+offset_top = 483.0
+offset_right = 417.0
+offset_bottom = 566.0
+theme_override_fonts/font = ExtResource("4_je7qb")
+text = "Reiniciar"
+script = ExtResource("5_vpevk")
+
+[node name="Salir" type="Button" parent="Botones" unique_id=528281780]
+visible = false
+layout_mode = 0
+offset_left = 727.0
+offset_top = 483.0
+offset_right = 871.0
+offset_bottom = 566.0
+theme_override_fonts/font = ExtResource("4_je7qb")
+text = "Salir"
+script = ExtResource("6_vpevk")
+
+[connection signal="pressed" from="Botones/Reiniciar" to="Botones/Reiniciar" method="_on_pressed"]
+[connection signal="pressed" from="Botones/Salir" to="Botones/Salir" method="_on_pressed"]
