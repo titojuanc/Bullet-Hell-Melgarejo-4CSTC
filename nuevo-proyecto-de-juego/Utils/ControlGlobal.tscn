@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://o1bse5r5djr4"]
+
+[ext_resource type="Script" uid="uid://cy17cji3unmdd" path="res://Utils/ControlGlobal.gd" id="1_y3i8h"]
+
+[node name="ControlGlobal" type="Node2D" unique_id=1220082303]
+script = ExtResource("1_y3i8h")

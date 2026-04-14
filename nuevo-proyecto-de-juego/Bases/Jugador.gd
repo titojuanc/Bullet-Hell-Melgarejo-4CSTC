@@ -6,10 +6,11 @@ signal entro_arena
 signal recibio_dano
 
 #estas variables cambian según el personaje elegido.
-@export var velocidad = 300.0
-@export var vidamax = 3
-@export var Slash = preload("res://Objetos/Slash.tscn")
-@export var ataque_cooldown: float
+var velocidad
+var vidamax
+var Slash
+var ataque_cooldown
+var vida
 
 #estados del pj
 var atacando = false
@@ -18,7 +19,6 @@ var dañado = false
 var en_cooldown = false
 var stun = false
 var en_combate = false 
-var vida = vidamax
 
 #hijos necesarios a modificar
 @onready var animador: AnimatedSprite2D = $AnimatedSprite2D
@@ -26,6 +26,7 @@ var vida = vidamax
 @onready var tiempo_stun: Timer = $Stun
 
 func _ready() -> void:
+	configurar_personaje()
 	animador.animation_finished.connect(_on_ataque_terminado)
 	cooldown.one_shot = true
 	cooldown.wait_time = ataque_cooldown
@@ -66,13 +67,7 @@ func _physics_process(delta: float) -> void:
 	#prioridad 3: ataque
 	if Input.is_action_pressed("attack"):
 		if !en_cooldown:
-			atacando = true
-			var bullet = Slash.instantiate()
-			add_child(bullet)
-			bullet.position = Vector2.ZERO
-			animador.play("Shoot")
-			en_cooldown = true
-			cooldown.start()
+			_atacar()
 	#bloquea el ataque de vuelta, medido por cooldown
 	if atacando:
 			return 
@@ -98,4 +93,16 @@ func _on_ataque_terminado() -> void:
 
 func _on_stun_timeout() -> void:
 	stun = false
+	pass
+
+func _atacar() -> void:
+	atacando = true
+	var bullet = Slash.instantiate()
+	add_child(bullet)
+	bullet.position = Vector2.ZERO
+	animador.play("Shoot")
+	en_cooldown = true
+	cooldown.start()
+	
+func configurar_personaje() -> void:
 	pass

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr8772mh5hrfw"
-path="res://.godot/imported/jump.png-883fd0866115403f32b8a354d2feeee3.ctex"
+uid="uid://bkylo42kmqniq"
+path="res://.godot/imported/spiderBoss.png-4f9987ed413be43b328221004269cf02.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Rouge/jump.png"
-dest_files=["res://.godot/imported/jump.png-883fd0866115403f32b8a354d2feeee3.ctex"]
+source_file="res://Assets/spiderBoss.png"
+dest_files=["res://.godot/imported/spiderBoss.png-4f9987ed413be43b328221004269cf02.ctex"]
 
 [params]
 

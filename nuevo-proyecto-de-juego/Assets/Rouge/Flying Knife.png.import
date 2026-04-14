@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dre5h637jx63j"
-path="res://.godot/imported/idle.png-6516592a5769bc8f0c8acaf060ec5ac3.ctex"
+uid="uid://crio6f0tvpoph"
+path="res://.godot/imported/Flying Knife.png-7849083a63561930504b5ea98217d0a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Rouge/idle.png"
-dest_files=["res://.godot/imported/idle.png-6516592a5769bc8f0c8acaf060ec5ac3.ctex"]
+source_file="res://Assets/Rouge/Flying Knife.png"
+dest_files=["res://.godot/imported/Flying Knife.png-7849083a63561930504b5ea98217d0a6.ctex"]
 
 [params]
 
