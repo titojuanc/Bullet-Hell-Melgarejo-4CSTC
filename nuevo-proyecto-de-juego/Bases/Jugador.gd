@@ -30,6 +30,7 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	configurar_personaje()
+	ControlGlobal.jugador = self
 	animador.animation_finished.connect(_on_ataque_terminado)
 	cooldown.one_shot = true
 	cooldown.wait_time = ataque_cooldown
@@ -103,6 +104,7 @@ func _atacar() -> void:
 	var bullet = Slash.instantiate()
 	add_child(bullet)
 	bullet.position = Vector2.ZERO
+	animador.stop()
 	animador.play("Shoot")
 	en_cooldown = true
 	cooldown.start()

@@ -1,5 +1,12 @@
 extends "res://Bases/Jefe.gd"
 
+func _configurar_jefe() -> void:
+	vidamax=10
+	vida=vidamax
+	jugador = ControlGlobal.jugador
+	disparo = preload("res://Objetos/Bala.tscn")
+	velocidad = 5
+
 func _ataque_1() -> void:
 	for c in rotor.get_children():
 		var bala = disparo.instantiate()

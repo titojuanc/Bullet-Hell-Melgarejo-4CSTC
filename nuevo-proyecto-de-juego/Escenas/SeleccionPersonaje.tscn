@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://cwi1b6dgv0fan" path="res://Utils/Minecraftia-Regular.ttf" id="3_txh7x"]
 [ext_resource type="Script" uid="uid://cqqsisgnoq5be" path="res://Scripts/ElegirPersonaje.gd" id="4_jikio"]
 [ext_resource type="Texture2D" uid="uid://cv6fjmd40280n" path="res://Assets/Orc/Orc-Idle.png" id="4_txh7x"]
+[ext_resource type="Script" uid="uid://8dnhulfgldns" path="res://Scripts/Jefes/Macaw.gd" id="6_jhsu6"]
 [ext_resource type="Script" uid="uid://bnvg82wpiyb56" path="res://Scripts/Personajes/Soldier.gd" id="6_q07tc"]
 [ext_resource type="Texture2D" uid="uid://blwr6re41r3sb" path="res://Assets/Orc/Orc-Attack02.png" id="7_7hkkd"]
 [ext_resource type="Texture2D" uid="uid://ue625v2vma0d" path="res://Assets/Rouge/Rogue - Full.png" id="7_q07tc"]
@@ -356,6 +357,7 @@ theme_override_font_sizes/font_size = 26
 text = "TOMAR"
 flat = true
 script = ExtResource("4_jikio")
+jefe_nivel_1 = ExtResource("6_jhsu6")
 personaje_elegido = ExtResource("6_q07tc")
 
 [node name="Pergamino3" type="TextureRect" parent="." unique_id=2060786892]
@@ -389,6 +391,7 @@ theme_override_font_sizes/font_size = 26
 text = "TOMAR"
 flat = true
 script = ExtResource("4_jikio")
+jefe_nivel_1 = ExtResource("6_jhsu6")
 personaje_elegido = ExtResource("8_itqts")
 
 [node name="Pergamino2" type="TextureRect" parent="." unique_id=211095575]
@@ -422,6 +425,7 @@ theme_override_font_sizes/font_size = 26
 text = "TOMAR"
 flat = true
 script = ExtResource("4_jikio")
+jefe_nivel_1 = ExtResource("6_jhsu6")
 personaje_elegido = ExtResource("11_jhsu6")
 
 [connection signal="pressed" from="Pergamino1/Button" to="Pergamino1/Button" method="_on_pressed"]

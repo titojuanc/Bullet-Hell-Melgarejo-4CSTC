@@ -36,3 +36,9 @@ func _on_jugador_entro_arena() -> void:
 	limit_right= 1600
 	limit_left = -500
 	pass # Replace with function body.
+
+
+func _on_jefe_murio() -> void:
+	var camara_nueva = Camera2D
+	get_parent().add_child(camara_nueva)
+	pass # Replace with function body.

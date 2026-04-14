@@ -17,14 +17,17 @@ var ataque_seleccionado
 @onready var rotor = $Rotor
 @onready var animador = $AnimatedSprite2D
 
-#variables con export para parametrizar
-@export var vidamax: int
-var vida=10
-@export var jugador: CharacterBody2D
-@export var disparo = preload("res://Objetos/Bala.tscn")
-@export var velocidad = 5
+var vidamax
+var vida
+var jugador
+var disparo
+var velocidad
+
+func _enter_tree() -> void:
+	set_script(ControlGlobal.jefe_seleccionado)
 
 func _ready() -> void:
+	_configurar_jefe()
 	recibir_daño.emit(vida, vidamax)
 	timer.wait_time = cooldown
 	timer.start()
@@ -128,4 +131,7 @@ func _rotar_canones() -> void:
 	rotor.rotation_degrees = fmod(rotacion_actual, 360)
 
 func _moverse() -> void:
+	pass
+
+func _configurar_jefe() -> void:
 	pass
