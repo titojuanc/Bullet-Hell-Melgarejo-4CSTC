@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgq5vam4lcn28"
-path="res://.godot/imported/frame_002.png-671bb252fb5e6bf00da319c0e6bebe87.ctex"
+uid="uid://o8tvcrbbpuin"
+path="res://.godot/imported/frame_002.png-11969f062827ab885aac3bcb164f9c89.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Árboles/frame_002.png"
-dest_files=["res://.godot/imported/frame_002.png-671bb252fb5e6bf00da319c0e6bebe87.ctex"]
+source_file="res://Assets/Soldier/frame_002.png"
+dest_files=["res://.godot/imported/frame_002.png-11969f062827ab885aac3bcb164f9c89.ctex"]
 
 [params]
 
