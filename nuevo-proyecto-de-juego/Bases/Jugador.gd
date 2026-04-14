@@ -25,6 +25,9 @@ var en_combate = false
 @onready var cooldown: Timer = $Cooldown
 @onready var tiempo_stun: Timer = $Stun
 
+func _enter_tree() -> void:
+	set_script(ControlGlobal.jugador_seleccionado)
+
 func _ready() -> void:
 	configurar_personaje()
 	animador.animation_finished.connect(_on_ataque_terminado)

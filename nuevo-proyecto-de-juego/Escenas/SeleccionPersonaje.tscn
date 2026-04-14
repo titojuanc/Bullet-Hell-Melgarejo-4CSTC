@@ -3,12 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://tg2tyg3j73s5" path="res://Assets/PergaminoCharacter.png" id="1_4dfci"]
 [ext_resource type="Texture2D" uid="uid://b4xoh6pphok33" path="res://Assets/Soldier/Soldier-Idle.png" id="2_i7o6k"]
 [ext_resource type="Texture2D" uid="uid://biny4qn3uo8vu" path="res://Assets/Soldier/Soldier-Attack02.png" id="3_8k318"]
-[ext_resource type="Texture2D" uid="uid://dre5h637jx63j" path="res://Assets/Rouge/idle.png" id="3_pbjxr"]
 [ext_resource type="FontFile" uid="uid://cwi1b6dgv0fan" path="res://Utils/Minecraftia-Regular.ttf" id="3_txh7x"]
 [ext_resource type="Script" uid="uid://cqqsisgnoq5be" path="res://Scripts/ElegirPersonaje.gd" id="4_jikio"]
 [ext_resource type="Texture2D" uid="uid://cv6fjmd40280n" path="res://Assets/Orc/Orc-Idle.png" id="4_txh7x"]
+[ext_resource type="Script" uid="uid://bnvg82wpiyb56" path="res://Scripts/Personajes/Soldier.gd" id="6_q07tc"]
 [ext_resource type="Texture2D" uid="uid://blwr6re41r3sb" path="res://Assets/Orc/Orc-Attack02.png" id="7_7hkkd"]
-[ext_resource type="Texture2D" uid="uid://b28tb106ishfk" path="res://Assets/Rouge/attack.png" id="9_q07tc"]
+[ext_resource type="Texture2D" uid="uid://ue625v2vma0d" path="res://Assets/Rouge/Rogue - Full.png" id="7_q07tc"]
+[ext_resource type="Script" uid="uid://u1xfpbx8d8wh" path="res://Scripts/Personajes/Rouge.gd" id="8_itqts"]
+[ext_resource type="Script" uid="uid://cwstst4e5w4y5" path="res://Scripts/Personajes/Orc.gd" id="11_jhsu6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_utfqj"]
 atlas = ExtResource("2_i7o6k")
@@ -104,65 +106,74 @@ animations = [{
 }],
 "loop": false,
 "name": &"selected",
-"speed": 9.0
+"speed": 8.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7hkkd"]
-atlas = ExtResource("3_pbjxr")
-region = Rect2(0, 0, 128, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q07tc"]
-atlas = ExtResource("3_pbjxr")
-region = Rect2(128, 0, 128, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_itqts"]
-atlas = ExtResource("3_pbjxr")
-region = Rect2(256, 0, 128, 64)
+atlas = ExtResource("7_q07tc")
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jhsu6"]
-atlas = ExtResource("3_pbjxr")
-region = Rect2(384, 0, 128, 64)
+atlas = ExtResource("7_q07tc")
+region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tqads"]
-atlas = ExtResource("9_q07tc")
-region = Rect2(0, 0, 128, 64)
+atlas = ExtResource("7_q07tc")
+region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3o1yq"]
-atlas = ExtResource("9_q07tc")
-region = Rect2(128, 0, 128, 64)
+atlas = ExtResource("7_q07tc")
+region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ghhjt"]
-atlas = ExtResource("9_q07tc")
-region = Rect2(256, 0, 128, 64)
+atlas = ExtResource("7_q07tc")
+region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kwtgw"]
-atlas = ExtResource("9_q07tc")
-region = Rect2(384, 0, 128, 64)
+atlas = ExtResource("7_q07tc")
+region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4lqak"]
-atlas = ExtResource("9_q07tc")
-region = Rect2(512, 0, 128, 64)
+atlas = ExtResource("7_q07tc")
+region = Rect2(0, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ucn3"]
+atlas = ExtResource("7_q07tc")
+region = Rect2(64, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxcfu"]
+atlas = ExtResource("7_q07tc")
+region = Rect2(128, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_383rv"]
+atlas = ExtResource("7_q07tc")
+region = Rect2(192, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4vue"]
+atlas = ExtResource("7_q07tc")
+region = Rect2(0, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dwne"]
+atlas = ExtResource("7_q07tc")
+region = Rect2(64, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_td3nx"]
+atlas = ExtResource("7_q07tc")
+region = Rect2(128, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7hwe"]
+atlas = ExtResource("7_q07tc")
+region = Rect2(192, 384, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6akq0"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7hkkd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q07tc")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_itqts")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jhsu6")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
 }, {
-"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tqads")
 }, {
@@ -174,13 +185,39 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kwtgw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
 }, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4lqak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ucn3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxcfu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_383rv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4vue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dwne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_td3nx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7hwe")
 }],
 "loop": false,
 "name": &"selected",
-"speed": 5.0
+"speed": 9.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aeogk"]
@@ -277,7 +314,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"selected",
-"speed": 6.0
+"speed": 8.0
 }]
 
 [node name="SeleccionPersonaje" type="Control" unique_id=201575495]
@@ -303,10 +340,9 @@ texture_filter = 1
 position = Vector2(114.666664, 83.20001)
 scale = Vector2(2.6666667, 1.6000001)
 sprite_frames = SubResource("SpriteFrames_4dfci")
-animation = &"selected"
 autoplay = "default"
 
-[node name="Button" type="Button" parent="Pergamino1" unique_id=1764110327]
+[node name="Button" type="Button" parent="Pergamino1" unique_id=1764110327 groups=["botones"]]
 texture_filter = 1
 layout_mode = 0
 offset_left = 67.33333
@@ -320,6 +356,7 @@ theme_override_font_sizes/font_size = 26
 text = "TOMAR"
 flat = true
 script = ExtResource("4_jikio")
+personaje_elegido = ExtResource("6_q07tc")
 
 [node name="Pergamino3" type="TextureRect" parent="." unique_id=2060786892]
 texture_filter = 1
@@ -333,13 +370,12 @@ texture = ExtResource("1_4dfci")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pergamino3" unique_id=1498360394]
 texture_filter = 1
-position = Vector2(122.66666, 65.2)
+position = Vector2(116.66666, 81.6)
 scale = Vector2(2, 1.2)
 sprite_frames = SubResource("SpriteFrames_6akq0")
-animation = &"selected"
 autoplay = "default"
 
-[node name="Button" type="Button" parent="Pergamino3" unique_id=1204608619]
+[node name="Button" type="Button" parent="Pergamino3" unique_id=1204608619 groups=["botones"]]
 texture_filter = 1
 layout_mode = 0
 offset_left = 67.33333
@@ -353,6 +389,7 @@ theme_override_font_sizes/font_size = 26
 text = "TOMAR"
 flat = true
 script = ExtResource("4_jikio")
+personaje_elegido = ExtResource("8_itqts")
 
 [node name="Pergamino2" type="TextureRect" parent="." unique_id=211095575]
 texture_filter = 1
@@ -369,10 +406,9 @@ texture_filter = 1
 position = Vector2(116, 81.200005)
 scale = Vector2(3, 1.8)
 sprite_frames = SubResource("SpriteFrames_a681s")
-animation = &"selected"
 autoplay = "default"
 
-[node name="Button" type="Button" parent="Pergamino2" unique_id=920963443]
+[node name="Button" type="Button" parent="Pergamino2" unique_id=920963443 groups=["botones"]]
 texture_filter = 1
 layout_mode = 0
 offset_left = 67.33333
@@ -386,6 +422,7 @@ theme_override_font_sizes/font_size = 26
 text = "TOMAR"
 flat = true
 script = ExtResource("4_jikio")
+personaje_elegido = ExtResource("11_jhsu6")
 
 [connection signal="pressed" from="Pergamino1/Button" to="Pergamino1/Button" method="_on_pressed"]
 [connection signal="pressed" from="Pergamino3/Button" to="Pergamino3/Button" method="_on_pressed"]

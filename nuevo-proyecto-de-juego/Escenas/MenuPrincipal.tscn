@@ -39,6 +39,7 @@ offset_bottom = 410.0
 theme_override_fonts/font = ExtResource("2_iq5l4")
 theme_override_font_sizes/font_size = 30
 text = "JUGAR"
+icon_alignment = 2
 expand_icon = true
 script = ExtResource("3_i4iwo")
 direccion = "res://Escenas/SeleccionPersonaje.tscn"
