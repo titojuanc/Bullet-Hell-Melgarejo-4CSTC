@@ -22,12 +22,15 @@ var vida
 var jugador
 var disparo
 var velocidad
+var movimiento_time
 
 func _enter_tree() -> void:
 	set_script(ControlGlobal.jefe_seleccionado)
 
 func _ready() -> void:
 	_configurar_jefe()
+	set_process(false)
+	set_physics_process(false)
 	recibir_daño.emit(vida, vidamax)
 	timer.wait_time = cooldown
 	timer.start()
@@ -55,7 +58,7 @@ func _on_cooldown_timeout() -> void:
 		ataque_cooldown.stop()
 		atacando = false
 		_resetear_canones()
-		timer.wait_time = 2
+		timer.wait_time = movimiento_time
 		timer.start()
 		_moverse()
 
@@ -134,4 +137,10 @@ func _moverse() -> void:
 	pass
 
 func _configurar_jefe() -> void:
+	pass
+
+
+func _on_jugador_entro_arena() -> void:
+	set_process(true)
+	set_physics_process(true)
 	pass

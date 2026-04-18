@@ -6,6 +6,7 @@ func _configurar_jefe() -> void:
 	jugador = ControlGlobal.jugador
 	disparo = preload("res://Objetos/Bala.tscn")
 	velocidad = 5
+	movimiento_time = 2
 
 func _ataque_1() -> void:
 	for c in rotor.get_children():
