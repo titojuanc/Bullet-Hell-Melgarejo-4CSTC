@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://3njatb3ctjep"]
+
+[ext_resource type="Texture2D" uid="uid://ddrfvxdynxqne" path="res://Assets/Dimensional_Portal.png" id="1_6ig1x"]
+[ext_resource type="Script" uid="uid://db4ms5lka1kh3" path="res://Scripts/Portal.gd" id="1_mykei"]
+[ext_resource type="FontFile" uid="uid://cwi1b6dgv0fan" path="res://Utils/Minecraftia-Regular.ttf" id="2_mykei"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsfu8"]
+atlas = ExtResource("1_6ig1x")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fimj2"]
+atlas = ExtResource("1_6ig1x")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cb3d"]
+atlas = ExtResource("1_6ig1x")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5h3b"]
+atlas = ExtResource("1_6ig1x")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0s6av"]
+atlas = ExtResource("1_6ig1x")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7uje"]
+atlas = ExtResource("1_6ig1x")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n4hmn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bsfu8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fimj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5cb3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5h3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0s6av")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7uje")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2j6s"]
+size = Vector2(20, 33)
+
+[node name="Portal" type="Area2D" unique_id=341182135]
+texture_filter = 1
+script = ExtResource("1_mykei")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=831416419]
+sprite_frames = SubResource("SpriteFrames_n4hmn")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1818411404]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_h2j6s")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1830876347]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=637811384]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -184.5
+offset_top = -88.0
+offset_right = 184.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_mykei")
+theme_override_font_sizes/font_size = 50
+text = "(f) AVANZAR"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

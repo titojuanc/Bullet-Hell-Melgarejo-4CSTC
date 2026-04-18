@@ -1,7 +1,7 @@
 extends "res://Bases/Jefe.gd"
 
 func _configurar_jefe() -> void:
-	vidamax=10
+	vidamax=1
 	vida=vidamax
 	jugador = ControlGlobal.jugador
 	disparo = preload("res://Objetos/Bala.tscn")
