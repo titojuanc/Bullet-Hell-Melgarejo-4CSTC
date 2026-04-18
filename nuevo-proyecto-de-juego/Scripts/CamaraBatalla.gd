@@ -39,6 +39,9 @@ func _on_jugador_entro_arena() -> void:
 
 
 func _on_jefe_murio() -> void:
-	var camara_nueva = Camera2D
+	var scriptCamara: Script = preload("res://Scripts/CamaraJugador.gd")
+	var camara_nueva = Camera2D.new()
+	camara_nueva.set_script(scriptCamara)
 	get_parent().add_child(camara_nueva)
+	queue_free()
 	pass # Replace with function body.
