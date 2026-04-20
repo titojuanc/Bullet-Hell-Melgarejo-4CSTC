@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://bwcis0bj2l0un"]
+
+[ext_resource type="Texture2D" uid="uid://cj2piwhyyxv7p" path="res://Assets/OrcSlash.png" id="1_772od"]
+[ext_resource type="Script" uid="uid://byyyusgoqik5l" path="res://Scripts/Balas/OrcSlash.gd" id="1_pon0i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_772od"]
+radius = 18.027756
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pon0i"]
+atlas = ExtResource("1_772od")
+region = Rect2(912, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbpb2"]
+atlas = ExtResource("1_772od")
+region = Rect2(864, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jp1g"]
+atlas = ExtResource("1_772od")
+region = Rect2(816, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etapg"]
+atlas = ExtResource("1_772od")
+region = Rect2(768, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hi2na"]
+atlas = ExtResource("1_772od")
+region = Rect2(720, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ph64"]
+atlas = ExtResource("1_772od")
+region = Rect2(672, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kk8kb"]
+atlas = ExtResource("1_772od")
+region = Rect2(624, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jiwby"]
+atlas = ExtResource("1_772od")
+region = Rect2(576, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bgjt"]
+atlas = ExtResource("1_772od")
+region = Rect2(528, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b44c1"]
+atlas = ExtResource("1_772od")
+region = Rect2(480, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fsbtm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pon0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbpb2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jp1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_etapg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hi2na")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ph64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kk8kb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jiwby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bgjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b44c1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="OrcSlash" type="RigidBody2D" unique_id=594145722 groups=["Bala"]]
+texture_filter = 1
+collision_layer = 4
+collision_mask = 2
+gravity_scale = 0.0
+script = ExtResource("1_pon0i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1117089221 groups=["Bala"]]
+shape = SubResource("CircleShape2D_772od")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1197970713]
+sprite_frames = SubResource("SpriteFrames_fsbtm")
+autoplay = "default"
+frame_progress = 0.687224

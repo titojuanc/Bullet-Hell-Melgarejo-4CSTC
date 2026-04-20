@@ -39,15 +39,18 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var colision = move_and_collide(velocity)
 	if colision:
-		if colision.get_collider().is_in_group("Bala"):
-			var objeto = colision.get_collider()
+		var objeto = colision.get_collider()
+		if objeto.is_in_group("Bala"):
+			var dano_recibido = objeto.dano
 			objeto.queue_free()
-			vida -= 1
+			vida -= dano_recibido
 			recibir_daño.emit(vida, vidamax)
-			print(vida)
-			if vida == 0:
+			if vida <= 0:
 				murio.emit()
 				queue_free()
+		if objeto.is_in_group("Jugador"):
+			if objeto.stun == false:
+				objeto.recibir_daño()
 
 func _on_cooldown_timeout() -> void:
 	if atacando == false:

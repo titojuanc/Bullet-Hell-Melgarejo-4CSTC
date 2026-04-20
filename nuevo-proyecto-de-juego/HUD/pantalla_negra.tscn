@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dq7icxby5ibq"]
 
 [ext_resource type="Texture2D" uid="uid://dqkxft47q86ki" path="res://Assets/pantallaNegra.png" id="1_4b3ts"]
-[ext_resource type="Script" uid="uid://bu1rwwbv3bt76" path="res://Scripts/PantallaNegra.gd" id="1_smv7g"]
+[ext_resource type="Script" uid="uid://bu1rwwbv3bt76" path="res://Scripts/HUD/PantallaNegra.gd" id="1_smv7g"]
 
 [node name="PantallaNegra" type="TextureRect" unique_id=1143139139]
 self_modulate = Color(1, 1, 1, 0)

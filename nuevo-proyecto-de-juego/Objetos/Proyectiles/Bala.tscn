@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://y67urcb6c73o"]
 
 [ext_resource type="Texture2D" uid="uid://de556acugfqdg" path="res://Assets/Enemy_attacks-removebg-preview.png" id="1_eo0e8"]
-[ext_resource type="Script" uid="uid://v5os2q2cvkp" path="res://Scripts/Bala.gd" id="2_pbkxs"]
+[ext_resource type="Script" uid="uid://v5os2q2cvkp" path="res://Scripts/Balas/Bala.gd" id="2_pbkxs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_17pp0"]
 radius = 13.0

@@ -1,10 +1,11 @@
 extends RigidBody2D
 
-const velocidad = 200
+var duracion = 2.0
+var velocidad = 200
 
 func _process(delta: float) -> void:
 	linear_velocity = Vector2.RIGHT.rotated(rotation) * velocidad
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(duracion).timeout
 	queue_free()
 
 func _physics_process(delta: float) -> void:

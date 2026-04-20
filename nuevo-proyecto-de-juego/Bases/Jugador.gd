@@ -58,7 +58,6 @@ func _physics_process(delta: float) -> void:
 		if (collsion.get_collider().is_in_group("Bala") or 
 		   collsion.get_collider().is_in_group("Jefe")) and stun == false:
 			recibir_daño()
-		   
 			
 	if direccion.x != 0:
 		animador.flip_h = direccion.x < 0

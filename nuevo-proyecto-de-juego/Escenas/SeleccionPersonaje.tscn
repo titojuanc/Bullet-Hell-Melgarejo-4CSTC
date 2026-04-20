@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ue625v2vma0d" path="res://Assets/Rouge/Rogue - Full.png" id="7_q07tc"]
 [ext_resource type="Script" uid="uid://u1xfpbx8d8wh" path="res://Scripts/Personajes/Rouge.gd" id="8_itqts"]
 [ext_resource type="Script" uid="uid://cwstst4e5w4y5" path="res://Scripts/Personajes/Orc.gd" id="11_jhsu6"]
+[ext_resource type="Texture2D" uid="uid://c3yhls8cmjcd4" path="res://Assets/wood.png" id="13_6akq0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_utfqj"]
 atlas = ExtResource("2_i7o6k")
@@ -326,6 +327,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Wood" type="TextureRect" parent="." unique_id=2077024443]
+modulate = Color(0.5803922, 0.5803922, 0.5882353, 1)
+z_index = -1
+texture_filter = 1
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("13_6akq0")
+stretch_mode = 1
+
 [node name="Pergamino1" type="TextureRect" parent="." unique_id=1704082188]
 texture_filter = 1
 layout_mode = 0
@@ -427,6 +438,40 @@ flat = true
 script = ExtResource("4_jikio")
 jefe_nivel_1 = ExtResource("6_jhsu6")
 personaje_elegido = ExtResource("11_jhsu6")
+
+[node name="Label" type="Label" parent="." unique_id=821677049]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 29.0
+offset_right = 959.0
+offset_bottom = 134.0
+theme_override_fonts/font = ExtResource("3_txh7x")
+theme_override_font_sizes/font_size = 60
+text = "ELIJE TU PERSONAJE"
+
+[node name="Label2" type="Label" parent="." unique_id=1828326567]
+layout_mode = 0
+offset_left = 197.0
+offset_top = 186.0
+offset_right = 328.0
+offset_bottom = 295.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_txh7x")
+theme_override_font_sizes/font_size = 30
+text = "Soldier
+"
+
+[node name="Label3" type="Label" parent="." unique_id=1108079568]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 343.0
+offset_right = 301.0
+offset_bottom = 452.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_txh7x")
+theme_override_font_sizes/font_size = 30
+text = "Soldier
+"
 
 [connection signal="pressed" from="Pergamino1/Button" to="Pergamino1/Button" method="_on_pressed"]
 [connection signal="pressed" from="Pergamino3/Button" to="Pergamino3/Button" method="_on_pressed"]

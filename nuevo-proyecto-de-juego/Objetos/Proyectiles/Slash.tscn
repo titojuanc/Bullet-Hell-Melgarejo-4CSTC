@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://btj1pyx67gnrs"]
 
-[ext_resource type="Script" uid="uid://bwbxvelt6pn8l" path="res://Scripts/Slash.gd" id="1_6p5jv"]
+[ext_resource type="Script" uid="uid://bwbxvelt6pn8l" path="res://Scripts/Balas/Slash.gd" id="1_6p5jv"]
 [ext_resource type="Texture2D" uid="uid://c2xh75jwxuwwb" path="res://Assets/sword_slash-removebg-preview.png" id="1_ekiq7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6p5jv"]

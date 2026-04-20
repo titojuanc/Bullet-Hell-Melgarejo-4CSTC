@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://csthi064b0x0u"]
 
 [ext_resource type="Texture2D" uid="uid://bpp41byrlehg3" path="res://Assets/You-Died.png" id="1_l0387"]
-[ext_resource type="Script" uid="uid://digdgrek71ucj" path="res://Scripts/pantalla_muerte.gd" id="2_vqlah"]
+[ext_resource type="Script" uid="uid://digdgrek71ucj" path="res://Scripts/HUD/pantalla_muerte.gd" id="2_vqlah"]
 [ext_resource type="PackedScene" uid="uid://dq7icxby5ibq" path="res://HUD/pantalla_negra.tscn" id="3_2gwhx"]
 [ext_resource type="FontFile" uid="uid://cwi1b6dgv0fan" path="res://Utils/Minecraftia-Regular.ttf" id="4_je7qb"]
 [ext_resource type="Script" uid="uid://brvr405rgaovv" path="res://Scripts/Reiniciar.gd" id="5_vpevk"]

@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://pbi8m5cay8gh"]
+
+[ext_resource type="Texture2D" uid="uid://crio6f0tvpoph" path="res://Assets/Rouge/Flying Knife.png" id="1_fjuit"]
+[ext_resource type="Script" uid="uid://dnr245ogo0qud" path="res://Scripts/Balas/Cuchillo.gd" id="1_mpwhn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpwhn"]
+atlas = ExtResource("1_fjuit")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j43c2"]
+atlas = ExtResource("1_fjuit")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pk8bs"]
+atlas = ExtResource("1_fjuit")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mu1cm"]
+atlas = ExtResource("1_fjuit")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1uikd"]
+atlas = ExtResource("1_fjuit")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d83a1"]
+atlas = ExtResource("1_fjuit")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_faxh4"]
+atlas = ExtResource("1_fjuit")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yp167"]
+atlas = ExtResource("1_fjuit")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dx86k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpwhn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j43c2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pk8bs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mu1cm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1uikd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d83a1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_faxh4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yp167")
+}],
+"loop": true,
+"name": &"default",
+"speed": 16.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1f7yf"]
+radius = 18.027756
+
+[node name="Cuchillo" type="RigidBody2D" unique_id=2004058913 groups=["Bala"]]
+collision_layer = 4
+collision_mask = 2
+gravity_scale = 0.0
+script = ExtResource("1_mpwhn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=989546912]
+texture_filter = 1
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_dx86k")
+autoplay = "default"
+frame = 2
+frame_progress = 0.12792255
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1109426099 groups=["Bala"]]
+shape = SubResource("CircleShape2D_1f7yf")
