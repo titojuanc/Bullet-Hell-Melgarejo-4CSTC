@@ -9,7 +9,7 @@ func _ready() -> void:
 	canvas.visible = false
 
 func _process(delta: float) -> void:
-	if encima:
+	if encima and visible == true:
 		if Input.is_action_pressed("f"):
 			get_tree().change_scene_to_file(siguiente_nivel)
 			print("lo hice")

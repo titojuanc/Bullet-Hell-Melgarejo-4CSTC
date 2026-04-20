@@ -1,11 +1,14 @@
 extends "res://Bases/Jugador.gd"
 
+var Parry = preload("res://Objetos/Parry.tscn")
+
 func configurar_personaje() -> void:
 	velocidad = 250
 	vidamax = 6
 	vida = vidamax
 	Slash = preload("res://Objetos/Proyectiles/OrcSlash.tscn")
 	ataque_cooldown = 1.5
+	habilidad_cooldown = 3
 	animador.sprite_frames = preload("res://Assets/Orc/Orc_spriteSheet.tres")
 
 func _atacar() -> void:
@@ -27,6 +30,8 @@ func _atacar() -> void:
 
 func _habilidad() -> void:
 	habilidad_en_uso = true
+	var parry = Parry.instantiate()
+	add_child(parry)
 	animador.stop()
 	animador.play("Habilidad")
 	en_cooldown_habilidad=true

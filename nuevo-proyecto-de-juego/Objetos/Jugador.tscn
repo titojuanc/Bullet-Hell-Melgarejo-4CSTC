@@ -1,23 +1,17 @@
 [gd_scene format=3 uid="uid://mra8ie23lb8h"]
 
-[ext_resource type="SpriteFrames" uid="uid://brhfl47lk3fqt" path="res://Assets/Rouge/rouge_spriteSheet.tres" id="1_eb4do"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_4i53u"]
-radius = 4.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eb4do"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1047151213 groups=["Jugador"]]
 collision_mask = 10
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1360053986]
-shape = SubResource("CircleShape2D_4i53u")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=486488990]
 texture_filter = 1
-sprite_frames = ExtResource("1_eb4do")
 animation = &"Habilidad"
-autoplay = "Idle"
-frame = 10
-frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1360053986]
+scale = Vector2(0.3, 0.3)
+shape = SubResource("RectangleShape2D_eb4do")
 
 [node name="Cooldown" type="Timer" parent="." unique_id=1503192725]
 

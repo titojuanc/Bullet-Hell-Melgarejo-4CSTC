@@ -45,9 +45,11 @@ func _ready() -> void:
 	cooldown.wait_time = ataque_cooldown
 	cooldown.timeout.connect(func(): en_cooldown = false)
 	cooldown_habilidad.timeout.connect(func(): en_cooldown_habilidad = false)
+	
 	#para setear la barra
 	recibio_dano.emit(vidamax, vidamax)
-
+	
+	animador.animation_finished.connect(on_animacion_finished)
 func _process(delta: float) -> void:
 	if global_position.x > -500 and en_combate == false:
 		entro_arena.emit()
@@ -78,11 +80,11 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	#prioridad 3: habilidad, despues ataque
-	if Input.is_action_pressed("attack") and !en_cooldown and !habilidad_en_uso:
+	if Input.is_action_pressed("attack") and !en_cooldown and animador.animation != "Habilidad":
 			_atacar()
 			return
 	
-	if Input.is_action_pressed("ability") and !en_cooldown_habilidad:
+	if Input.is_action_pressed("ability") and !en_cooldown_habilidad and animador.animation != "Shoot":
 			print("LLegue")
 			_habilidad()
 			return
@@ -113,6 +115,9 @@ func _on_ataque_terminado() -> void:
 func _on_habilidad_terminado() -> void:
 	if animador.animation == "Habilidad":
 		habilidad_en_uso = false
+	
+func on_animacion_finished() -> void:
+	animador.stop()
 
 func _on_stun_timeout() -> void:
 	stun = false
