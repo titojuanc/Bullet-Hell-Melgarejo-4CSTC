@@ -13,6 +13,18 @@
 [ext_resource type="Script" uid="uid://u1xfpbx8d8wh" path="res://Scripts/Personajes/Rouge.gd" id="8_itqts"]
 [ext_resource type="Script" uid="uid://cwstst4e5w4y5" path="res://Scripts/Personajes/Orc.gd" id="11_jhsu6"]
 [ext_resource type="Texture2D" uid="uid://c3yhls8cmjcd4" path="res://Assets/wood.png" id="13_6akq0"]
+[ext_resource type="Texture2D" uid="uid://c4mw1jfaoqxck" path="res://Assets/EspadaIcon.png" id="14_aeogk"]
+[ext_resource type="Texture2D" uid="uid://c4vodkpvuhudd" path="res://Assets/heart.png" id="15_dau7n"]
+[ext_resource type="Texture2D" uid="uid://03k6xyge3yba" path="res://Assets/SpeedIcon.png" id="16_0t882"]
+[ext_resource type="Texture2D" uid="uid://bdymkhwksv7kt" path="res://Assets/Barras/frame_009.png" id="17_a681s"]
+[ext_resource type="Texture2D" uid="uid://cwurpk8riwao8" path="res://Assets/Barras/frame_030.png" id="18_gbaiy"]
+[ext_resource type="Texture2D" uid="uid://r4cbpyaw44ua" path="res://Assets/Barras/frame_021.png" id="19_oisd1"]
+[ext_resource type="Texture2D" uid="uid://btsldbbvsllr3" path="res://Assets/Barras/frame_007.png" id="20_nbky6"]
+[ext_resource type="Texture2D" uid="uid://c1d4bg66pk8l7" path="res://Assets/Barras/frame_027.png" id="21_vgugw"]
+[ext_resource type="Texture2D" uid="uid://8xh22sxqnx32" path="res://Assets/Barras/frame_023.png" id="22_tqads"]
+[ext_resource type="Texture2D" uid="uid://wkoc2umpqaht" path="res://Assets/Barras/frame_010.png" id="23_3o1yq"]
+[ext_resource type="Texture2D" uid="uid://ctwdkey3rxph2" path="res://Assets/Barras/frame_031.png" id="24_tqads"]
+[ext_resource type="Texture2D" uid="uid://5brkt2ktumu2" path="res://Assets/Barras/frame_018.png" id="25_3o1yq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_utfqj"]
 atlas = ExtResource("2_i7o6k")
@@ -439,17 +451,34 @@ script = ExtResource("4_jikio")
 jefe_nivel_1 = ExtResource("6_jhsu6")
 personaje_elegido = ExtResource("11_jhsu6")
 
-[node name="Label" type="Label" parent="." unique_id=821677049]
-layout_mode = 0
-offset_left = 224.0
-offset_top = 29.0
-offset_right = 959.0
-offset_bottom = 134.0
-theme_override_fonts/font = ExtResource("3_txh7x")
-theme_override_font_sizes/font_size = 60
-text = "ELIJE TU PERSONAJE"
+[node name="Textos" type="Control" parent="." unique_id=572595283]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Label2" type="Label" parent="." unique_id=1828326567]
+[node name="Label4" type="Label" parent="Textos" unique_id=204477059]
+layout_mode = 0
+offset_left = 848.0
+offset_top = 185.0
+offset_right = 961.0
+offset_bottom = 238.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_txh7x")
+theme_override_font_sizes/font_size = 30
+text = "Rouge"
+
+[node name="Label3" type="Label" parent="Textos" unique_id=1108079568]
+layout_mode = 0
+offset_left = 552.0
+offset_top = 188.0
+offset_right = 620.0
+offset_bottom = 241.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_txh7x")
+theme_override_font_sizes/font_size = 30
+text = "Orc"
+
+[node name="Label2" type="Label" parent="Textos" unique_id=1828326567]
 layout_mode = 0
 offset_left = 197.0
 offset_top = 186.0
@@ -461,17 +490,119 @@ theme_override_font_sizes/font_size = 30
 text = "Soldier
 "
 
-[node name="Label3" type="Label" parent="." unique_id=1108079568]
+[node name="Label" type="Label" parent="Textos" unique_id=821677049]
 layout_mode = 0
-offset_left = 170.0
-offset_top = 343.0
-offset_right = 301.0
-offset_bottom = 452.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 224.0
+offset_top = 29.0
+offset_right = 959.0
+offset_bottom = 134.0
 theme_override_fonts/font = ExtResource("3_txh7x")
-theme_override_font_sizes/font_size = 30
-text = "Soldier
-"
+theme_override_font_sizes/font_size = 60
+text = "ELIJE TU PERSONAJE"
+
+[node name="Iconos" type="Control" parent="." unique_id=2027180626]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EspadaIcon2" type="Sprite2D" parent="Iconos" unique_id=472930997]
+position = Vector2(512, 408.00003)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("14_aeogk")
+
+[node name="EspadaIcon3" type="Sprite2D" parent="Iconos" unique_id=490451801]
+position = Vector2(824.33636, 408.5417)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("14_aeogk")
+
+[node name="EspadaIcon" type="Sprite2D" parent="Iconos" unique_id=1791065273]
+position = Vector2(182, 408.00003)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("14_aeogk")
+
+[node name="Heart" type="Sprite2D" parent="Iconos" unique_id=810706248]
+position = Vector2(175, 443.99997)
+scale = Vector2(0.6, 0.563)
+texture = ExtResource("15_dau7n")
+
+[node name="Heart2" type="Sprite2D" parent="Iconos" unique_id=1930068537]
+position = Vector2(506, 443.99997)
+scale = Vector2(0.6, 0.563)
+texture = ExtResource("15_dau7n")
+
+[node name="Heart3" type="Sprite2D" parent="Iconos" unique_id=1922788236]
+position = Vector2(818.00006, 443.99997)
+scale = Vector2(0.6, 0.563)
+texture = ExtResource("15_dau7n")
+
+[node name="SpeedIcon" type="Sprite2D" parent="Iconos" unique_id=1522998239]
+position = Vector2(178.00002, 482.00003)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("16_0t882")
+
+[node name="SpeedIcon2" type="Sprite2D" parent="Iconos" unique_id=534196605]
+position = Vector2(509, 482)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("16_0t882")
+
+[node name="SpeedIcon3" type="Sprite2D" parent="Iconos" unique_id=183078393]
+position = Vector2(821.00006, 482)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("16_0t882")
+
+[node name="ATK_sol" type="Sprite2D" parent="Iconos" unique_id=140757493]
+texture_filter = 1
+position = Vector2(264, 429)
+scale = Vector2(2, 2)
+texture = ExtResource("17_a681s")
+
+[node name="HP_sol" type="Sprite2D" parent="Iconos" unique_id=248947643]
+texture_filter = 1
+position = Vector2(264, 465.00003)
+scale = Vector2(2, 2)
+texture = ExtResource("18_gbaiy")
+
+[node name="SPE_sol" type="Sprite2D" parent="Iconos" unique_id=881265789]
+texture_filter = 1
+position = Vector2(264, 503)
+scale = Vector2(2, 2)
+texture = ExtResource("19_oisd1")
+
+[node name="ATK_orc" type="Sprite2D" parent="Iconos" unique_id=1140993079]
+texture_filter = 1
+position = Vector2(592, 429)
+scale = Vector2(2, 2)
+texture = ExtResource("20_nbky6")
+
+[node name="HP_orc" type="Sprite2D" parent="Iconos" unique_id=1301802141]
+texture_filter = 1
+position = Vector2(592, 465)
+scale = Vector2(2, 2)
+texture = ExtResource("21_vgugw")
+
+[node name="SPE_orc" type="Sprite2D" parent="Iconos" unique_id=1114651836]
+texture_filter = 1
+position = Vector2(592, 503)
+scale = Vector2(2, 2)
+texture = ExtResource("22_tqads")
+
+[node name="ATK_rou" type="Sprite2D" parent="Iconos" unique_id=1042407990]
+texture_filter = 1
+position = Vector2(903, 429)
+scale = Vector2(2, 2)
+texture = ExtResource("23_3o1yq")
+
+[node name="HP_rou" type="Sprite2D" parent="Iconos" unique_id=1053214521]
+texture_filter = 1
+position = Vector2(903, 465)
+scale = Vector2(2, 2)
+texture = ExtResource("24_tqads")
+
+[node name="SPE_rou" type="Sprite2D" parent="Iconos" unique_id=424748771]
+texture_filter = 1
+position = Vector2(903, 501)
+scale = Vector2(2, 2)
+texture = ExtResource("25_3o1yq")
 
 [connection signal="pressed" from="Pergamino1/Button" to="Pergamino1/Button" method="_on_pressed"]
 [connection signal="pressed" from="Pergamino3/Button" to="Pergamino3/Button" method="_on_pressed"]

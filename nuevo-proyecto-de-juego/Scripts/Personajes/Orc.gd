@@ -24,3 +24,10 @@ func _atacar() -> void:
 	animador.play("Shoot")
 	en_cooldown = true
 	cooldown.start()
+
+func _habilidad() -> void:
+	habilidad_en_uso = true
+	animador.stop()
+	animador.play("Habilidad")
+	en_cooldown_habilidad=true
+	cooldown_habilidad.start()

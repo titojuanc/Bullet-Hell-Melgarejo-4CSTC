@@ -10,6 +10,7 @@ var velocidad
 var vidamax
 var Slash
 var ataque_cooldown
+var habilidad_cooldown = 3
 var vida
 
 #estados del pj
@@ -17,13 +18,16 @@ var atacando = false
 var muerto = false
 var dañado = false
 var en_cooldown = false
+var en_cooldown_habilidad = false
 var stun = false
 var en_combate = false 
+var habilidad_en_uso = false
 
 #hijos necesarios a modificar
 @onready var animador: AnimatedSprite2D = $AnimatedSprite2D
 @onready var cooldown: Timer = $Cooldown
 @onready var tiempo_stun: Timer = $Stun
+@onready var cooldown_habilidad: Timer = $Cooldown_habilidad
 
 func _enter_tree() -> void:
 	set_script(ControlGlobal.jugador_seleccionado)
@@ -31,10 +35,16 @@ func _enter_tree() -> void:
 func _ready() -> void:
 	configurar_personaje()
 	ControlGlobal.jugador = self
+	
+	#configura sus cooldown
 	animador.animation_finished.connect(_on_ataque_terminado)
+	animador.animation_finished.connect(_on_habilidad_terminado)
+	cooldown_habilidad.one_shot = true
 	cooldown.one_shot = true
+	cooldown_habilidad.wait_time = habilidad_cooldown
 	cooldown.wait_time = ataque_cooldown
 	cooldown.timeout.connect(func(): en_cooldown = false)
+	cooldown_habilidad.timeout.connect(func(): en_cooldown_habilidad = false)
 	#para setear la barra
 	recibio_dano.emit(vidamax, vidamax)
 
@@ -67,12 +77,18 @@ func _physics_process(delta: float) -> void:
 		animador.play("Danado")
 		return
 	
-	#prioridad 3: ataque
-	if Input.is_action_pressed("attack"):
-		if !en_cooldown:
+	#prioridad 3: habilidad, despues ataque
+	if Input.is_action_pressed("attack") and !en_cooldown and !habilidad_en_uso:
 			_atacar()
+			return
+	
+	if Input.is_action_pressed("ability") and !en_cooldown_habilidad:
+			print("LLegue")
+			_habilidad()
+			return
+	
 	#bloquea el ataque de vuelta, medido por cooldown
-	if atacando:
+	if atacando or habilidad_en_uso:
 			return 
 	#para poder chequear de manera mas simple qe animacion hace
 	animador.play("Walk" if direccion != Vector2.ZERO else "Idle")
@@ -94,6 +110,10 @@ func _on_ataque_terminado() -> void:
 	if animador.animation == "Shoot":
 		atacando = false
 
+func _on_habilidad_terminado() -> void:
+	if animador.animation == "Habilidad":
+		habilidad_en_uso = false
+
 func _on_stun_timeout() -> void:
 	stun = false
 	pass
@@ -107,6 +127,9 @@ func _atacar() -> void:
 	animador.play("Shoot")
 	en_cooldown = true
 	cooldown.start()
-	
+
+func _habilidad() -> void:
+	pass
+
 func configurar_personaje() -> void:
 	pass
