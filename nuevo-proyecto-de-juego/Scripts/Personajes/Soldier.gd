@@ -13,8 +13,9 @@ func configurar_personaje() -> void:
 func _habilidad() -> void:
 	habilidad_en_uso = true
 	var ulti = flecha.instantiate()
-	add_child(flecha)
+	add_child(ulti)
 	ulti.position = Vector2.ZERO
+	ulti.look_at(get_global_mouse_position())
 	animador.stop()
 	animador.play("Habilidad")
 	en_cooldown_habilidad=true
