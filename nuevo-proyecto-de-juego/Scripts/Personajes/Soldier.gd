@@ -14,6 +14,7 @@ func _habilidad() -> void:
 	habilidad_en_uso = true
 	var ulti = flecha.instantiate()
 	add_child(flecha)
+	ulti.position = Vector2.ZERO
 	animador.stop()
 	animador.play("Habilidad")
 	en_cooldown_habilidad=true

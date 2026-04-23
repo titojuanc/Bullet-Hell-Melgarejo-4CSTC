@@ -10,6 +10,7 @@ var canones
 var radio = 10
 var atacando = false
 var ataque_seleccionado
+var inicio_pelea = false
 
 #variables de nodos hijos
 @onready var ataque_cooldown = $Ataque_Cooldown
@@ -53,17 +54,18 @@ func _physics_process(delta: float) -> void:
 				objeto.recibir_daño()
 
 func _on_cooldown_timeout() -> void:
-	if atacando == false:
-		velocity = Vector2.ZERO
-		_configurar_ataque()
-		atacando = true
-	else:
-		ataque_cooldown.stop()
-		atacando = false
-		_resetear_canones()
-		timer.wait_time = movimiento_time
-		timer.start()
-		_moverse()
+	if inicio_pelea:
+		if atacando == false:
+			velocity = Vector2.ZERO
+			_configurar_ataque()
+			atacando = true
+		else:
+			ataque_cooldown.stop()
+			atacando = false
+			_resetear_canones()
+			timer.wait_time = movimiento_time
+			timer.start()
+			_moverse()
 
 func _configurar_ataque() -> void:
 	var n = randi_range(1,3)
@@ -146,4 +148,5 @@ func _configurar_jefe() -> void:
 func _on_jugador_entro_arena() -> void:
 	set_process(true)
 	set_physics_process(true)
+	inicio_pelea = true
 	pass

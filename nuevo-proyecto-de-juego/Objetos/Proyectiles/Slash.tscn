@@ -70,5 +70,4 @@ autoplay = "Flying"
 frame_progress = 0.66764057
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2046033014]
-position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_4m7v7")

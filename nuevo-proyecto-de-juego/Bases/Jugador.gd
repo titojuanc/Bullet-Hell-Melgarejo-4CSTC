@@ -10,7 +10,7 @@ var velocidad
 var vidamax
 var Slash
 var ataque_cooldown
-var habilidad_cooldown = 3
+var habilidad_cooldown
 var vida
 
 #estados del pj
@@ -39,6 +39,7 @@ func _ready() -> void:
 	#configura sus cooldown
 	animador.animation_finished.connect(_on_ataque_terminado)
 	animador.animation_finished.connect(_on_habilidad_terminado)
+	
 	cooldown_habilidad.one_shot = true
 	cooldown.one_shot = true
 	cooldown_habilidad.wait_time = habilidad_cooldown
@@ -61,16 +62,10 @@ func _physics_process(delta: float) -> void:
 		animador.play("Muerte")
 		return
 	
-	var collsion = move_and_collide(velocity * delta)
-	#Le creo un vector de movimiento para hacerla más fácil
 	var direccion = Vector2(Input.get_axis("left", "right"),Input.get_axis("up", "down")).normalized()
 	velocity = direccion * velocidad
+	move_and_slide()
 	
-	if collsion:
-		if (collsion.get_collider().is_in_group("Bala") or 
-		   collsion.get_collider().is_in_group("Jefe")) and stun == false:
-			recibir_daño()
-			
 	if direccion.x != 0:
 		animador.flip_h = direccion.x < 0
 		
@@ -96,6 +91,8 @@ func _physics_process(delta: float) -> void:
 	animador.play("Walk" if direccion != Vector2.ZERO else "Idle")
 
 func recibir_daño() -> void:
+	if stun:
+		return
 	vida -= 1
 	tiempo_stun.start()
 	recibio_dano.emit(vida, vidamax)
@@ -109,11 +106,11 @@ func morir() -> void:
 	murio.emit()
 
 func _on_ataque_terminado() -> void:
-	if animador.animation == "Shoot":
+	if animador.animation == "Shoot" or atacando == true:
 		atacando = false
 
 func _on_habilidad_terminado() -> void:
-	if animador.animation == "Habilidad":
+	if animador.animation == "Habilidad" or habilidad_en_uso == true:
 		habilidad_en_uso = false
 	
 func on_animacion_finished() -> void:

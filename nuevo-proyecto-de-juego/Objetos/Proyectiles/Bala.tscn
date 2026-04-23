@@ -56,9 +56,8 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="Bala" type="RigidBody2D" unique_id=2042657136 groups=["Bala"]]
+[node name="Bala" type="CharacterBody2D" unique_id=1609096634 groups=["Bala"]]
 collision_layer = 8
-gravity_scale = 0.0
 script = ExtResource("2_pbkxs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1564469024 groups=["Bala"]]

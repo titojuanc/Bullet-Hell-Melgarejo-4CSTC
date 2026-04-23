@@ -1,14 +1,18 @@
-extends RigidBody2D
+extends CharacterBody2D
 
 var duracion = 2.0
-var velocidad = 200
+var velocidad = 400
 
 func _process(delta: float) -> void:
-	linear_velocity = Vector2.RIGHT.rotated(rotation) * velocidad
 	await get_tree().create_timer(duracion).timeout
 	queue_free()
 
 func _physics_process(delta: float) -> void:
-	var colision = move_and_collide(linear_velocity * delta)
+	velocity = Vector2.RIGHT.rotated(rotation) * velocidad
+	var colision = move_and_collide(velocity * delta)
 	if colision:
+		var jugador = colision.get_collider()
+		if jugador.has_method("recibir_daño"):
+			jugador.recibir_daño()
 		queue_free()
+	
