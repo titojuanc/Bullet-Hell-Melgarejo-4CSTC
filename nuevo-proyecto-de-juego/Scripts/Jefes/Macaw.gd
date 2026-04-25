@@ -7,6 +7,8 @@ func _configurar_jefe() -> void:
 	disparo = preload("res://Objetos/Proyectiles/Bala.tscn")
 	velocidad = 5
 	movimiento_time = 2
+	animador.sprite_frames = preload("res://Assets/Macaw/spriteSheet_Macaw.tres")
+	animador.play("Movimiento")
 
 func _ataque_1() -> void:
 	for c in rotor.get_children():

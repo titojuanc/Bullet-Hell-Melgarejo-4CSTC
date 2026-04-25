@@ -222,18 +222,18 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e37g4"]
-radius = 77.02597
+radius = 43.416588
 
-[node name="Flecha" type="RigidBody2D" unique_id=75957794 groups=["Bala"]]
+[node name="Flecha" type="RigidBody2D" unique_id=75957794 groups=["Bala", "Flecha"]]
 texture_filter = 1
-collision_layer = 4
-collision_mask = 2
+collision_layer = 36
+collision_mask = 10
 gravity_scale = 0.0
 script = ExtResource("1_e37g4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1612173626]
-position = Vector2(-88, 0)
-scale = Vector2(0.4, 0.446)
+position = Vector2(-42, 0)
+scale = Vector2(0.2, 0.223)
 sprite_frames = SubResource("SpriteFrames_sqt5n")
 autoplay = "default"
 frame_progress = 0.3955424

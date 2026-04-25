@@ -2,5 +2,5 @@ extends ProyectilJugador
 
 func _configurar_proyectil() -> void:
 	velocidad = 400
-	dano = 0.8
-	duracion = 0.5
+	dano = 1.2
+	duracion = 0.7
