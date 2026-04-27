@@ -23,4 +23,4 @@ Juego de tipo **Bullet Hell** desarrollado en **Godot 4.6**. El jugador debe sob
 3. Movete con **WASD** para esquivar los proyectiles enemigos.
 4. Usá el **click izquierdo** para atacar a los enemigos que se acerquen.
 5. Usá la **habilidad especial** (Espacio) estratégicamente — tiene un cooldown.
-6. Derrotá a todos los enemigos y al **jefe** de cada nivel para avanzar al siguiente a través del portal.
+6. Derrotá al **jefe** de cada nivel para avanzar al siguiente a través del portal.
