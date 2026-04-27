@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://c18c5i52wond6"]
 
-[ext_resource type="PackedScene" uid="uid://bywilqnv0vj6t" path="res://HUD/BossBar.tscn" id="1_h00n0"]
+[ext_resource type="PackedScene" uid="uid://bywilqnv0vj6t" path="res://HUD-UI/BossBar.tscn" id="1_f31rt"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1353971405]
 
-[node name="ProgressBar" parent="." unique_id=619014746 instance=ExtResource("1_h00n0")]
+[node name="ProgressBar" parent="." unique_id=619014746 instance=ExtResource("1_f31rt")]
 offset_left = 60.0
 offset_right = 1110.0
 
