@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Juego de tipo **Bullet Hell** desarrollado en **Godot 4.6**. El jugador debe sobrevivir oleadas de enemigos y enfrentarse a jefes finales mientras esquiva proyectiles y contraataca. Al inicio se puede elegir entre distintos personajes, cada uno con estadísticas y habilidades únicas. El juego cuenta con múltiples niveles ambientados en escenarios como bosques y cuevas.
+Juego de tipo **Bullet Hell** desarrollado en **Godot 4.6**. El jugador debe enfrentarse a jefes finales mientras esquiva proyectiles y contraataca. Al inicio se puede elegir entre distintos personajes, cada uno con estadísticas y habilidades únicas. El juego cuenta con múltiples niveles ambientados en escenarios como bosques y cuevas.
 
 ## Controles
 
