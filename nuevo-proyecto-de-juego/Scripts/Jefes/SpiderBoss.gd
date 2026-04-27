@@ -13,7 +13,6 @@ func _configurar_jefe() -> void:
 	animador.play("Movimiento")
 
 func _moverse() -> void:
-	
 	var direccion = jugador.global_position - global_position
 	velocity = Vector2(velocidad, 0).rotated(direccion.angle())
 	if direccion.x != 0:
@@ -24,13 +23,14 @@ func _spawnear_minion() -> void:
 	enemigo.set_script(preload("res://Scripts/Enemigos/Raptor.gd"))
 	enemigo.global_position = global_position
 	get_tree().root.add_child(enemigo)
+	enemigo.jugador = jugador
 
 func _ataque_1() -> void:
 		#configuracion del ataque 1:
-	canones = 8
-	grados_rotados = 10
+	canones = 16
+	grados_rotados = 12
 	timer.wait_time = 5
-	ataque_cooldown.wait_time = 0.2
+	ataque_cooldown.wait_time = 0.3
 	_generar_canones(canones)
 	for c in rotor.get_children():
 		var bala = disparo.instantiate()
@@ -56,7 +56,7 @@ func _ataque_2() -> void:
 	pass
 
 func _ataque_3() -> void:
-	timer.wait_time = 0.5
-	ataque_cooldown.wait_time = 1
+	timer.wait_time = 3
+	ataque_cooldown.stop()
 	_spawnear_minion()
 	pass

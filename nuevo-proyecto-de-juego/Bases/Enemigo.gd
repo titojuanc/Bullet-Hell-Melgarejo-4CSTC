@@ -12,9 +12,9 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	var direccion = jugador.global_position - global_position
-	velocity = Vector2(velocidad, 0).rotated(direccion.angle())
+	velocity = direccion.normalized() * velocidad
 	if direccion.x != 0:
-		animador.flip_h = direccion.x < 0
+		animador.flip_h = direccion.x > 0
 	
 	var colision = move_and_collide(velocity * delta)
 	if colision:

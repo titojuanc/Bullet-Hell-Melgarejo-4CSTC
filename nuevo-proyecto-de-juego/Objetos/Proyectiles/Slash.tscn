@@ -58,7 +58,7 @@ radius = 19.026299
 
 [node name="Slash" type="RigidBody2D" unique_id=250163442 groups=["Bala"]]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 34
 gravity_scale = 0.0
 script = ExtResource("1_6p5jv")
 

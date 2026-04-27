@@ -87,7 +87,7 @@ animations = [{
 [node name="OrcSlash" type="RigidBody2D" unique_id=594145722 groups=["Bala"]]
 texture_filter = 1
 collision_layer = 4
-collision_mask = 2
+collision_mask = 34
 gravity_scale = 0.0
 script = ExtResource("1_pon0i")
 
