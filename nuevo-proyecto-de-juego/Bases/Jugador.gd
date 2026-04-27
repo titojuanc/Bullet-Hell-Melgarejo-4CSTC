@@ -74,6 +74,8 @@ func _physics_process(delta: float) -> void:
 		animador.play("Danado")
 		return
 	
+	
+	
 	#prioridad 3: habilidad, despues ataque
 	if Input.is_action_pressed("attack") and !en_cooldown and animador.animation != "Habilidad":
 			_atacar()

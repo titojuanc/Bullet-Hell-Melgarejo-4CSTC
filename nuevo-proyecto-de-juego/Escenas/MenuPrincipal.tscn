@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://eyeqptqa0oxd" path="res://Assets/MainMenuBG.png" id="1_20qv4"]
 [ext_resource type="FontFile" uid="uid://cwi1b6dgv0fan" path="res://Utils/Minecraftia-Regular.ttf" id="2_iq5l4"]
-[ext_resource type="Script" uid="uid://dxdkegsch2o0b" path="res://Utils/NavButton.gd" id="3_i4iwo"]
+[ext_resource type="Script" uid="uid://dxdkegsch2o0b" path="res://Scripts/HUD/NavButton.gd" id="3_i4iwo"]
 [ext_resource type="Script" uid="uid://boe1usl8ljvk6" path="res://Scripts/Salir.gd" id="4_shwl5"]
 [ext_resource type="Texture2D" uid="uid://c6832poojkrg4" path="res://Assets/Titulo.png" id="5_gdyll"]
 
@@ -56,8 +56,8 @@ offset_bottom = 513.0
 theme_override_fonts/font = ExtResource("2_iq5l4")
 theme_override_font_sizes/font_size = 30
 text = "OPCIONES"
-expand_icon = true
 script = ExtResource("3_i4iwo")
+direccion = "res://Escenas/Opciones.tscn"
 
 [node name="Salir" type="Button" parent="." unique_id=29446287]
 layout_mode = 0

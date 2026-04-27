@@ -35,6 +35,7 @@ func _ready() -> void:
 	recibir_daño.emit(vida, vidamax)
 	timer.wait_time = cooldown
 	timer.start()
+	ataque_cooldown.start()
 	pass
 
 func _physics_process(delta: float) -> void:
@@ -71,10 +72,13 @@ func _configurar_ataque() -> void:
 	var n = randi_range(1,3)
 	if n == 1:
 		ataque_seleccionado = 1
+		_ataque_1_config()
 	elif n == 2:
 		ataque_seleccionado = 2
+		_ataque_2_config()
 	elif n == 3:
 		ataque_seleccionado = 3
+		_ataque_3_config()
 	timer.start()
 	ataque_cooldown.start()
 	pass
@@ -93,6 +97,13 @@ func _ataque_1() -> void:
 func _ataque_2() -> void:
 	pass
 func _ataque_3() -> void:
+	pass
+
+func _ataque_1_config() -> void:
+	pass
+func _ataque_2_config() -> void:
+	pass
+func _ataque_3_config() -> void:
 	pass
 
 func _generar_canones(num_canones: int) -> void:

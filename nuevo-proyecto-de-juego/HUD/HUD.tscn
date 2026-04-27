@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c18c5i52wond6"]
 
-[ext_resource type="PackedScene" uid="uid://bywilqnv0vj6t" path="res://Utils/BossBar.tscn" id="1_h00n0"]
+[ext_resource type="PackedScene" uid="uid://bywilqnv0vj6t" path="res://HUD/BossBar.tscn" id="1_h00n0"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1353971405]
 

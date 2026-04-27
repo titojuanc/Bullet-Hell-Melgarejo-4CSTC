@@ -26,12 +26,6 @@ func _spawnear_minion() -> void:
 	enemigo.jugador = jugador
 
 func _ataque_1() -> void:
-		#configuracion del ataque 1:
-	canones = 16
-	grados_rotados = 12
-	timer.wait_time = 5
-	ataque_cooldown.wait_time = 0.3
-	_generar_canones(canones)
 	for c in rotor.get_children():
 		var bala = disparo.instantiate()
 		get_tree().root.add_child(bala)
@@ -41,12 +35,7 @@ func _ataque_1() -> void:
 	pass
 
 func _ataque_2() -> void:
-		#configuracion del ataque 2:
-	canones = 4
-	grados_rotados = 5
-	timer.wait_time = 3
-	ataque_cooldown.wait_time = 0.1
-	_generar_canones(canones)
+	
 	for c in rotor.get_children():
 		var bala = disparo.instantiate()
 		get_tree().root.add_child(bala)
@@ -56,7 +45,28 @@ func _ataque_2() -> void:
 	pass
 
 func _ataque_3() -> void:
-	timer.wait_time = 3
-	ataque_cooldown.stop()
 	_spawnear_minion()
+	pass
+
+func _ataque_1_config() -> void:
+		#configuracion del ataque 1:
+	canones = 16
+	grados_rotados = 12
+	timer.wait_time = 3
+	ataque_cooldown.wait_time = 0.5
+	_generar_canones(canones)
+	pass
+
+func _ataque_2_config() -> void:
+		#configuracion del ataque 2:
+	canones = 4
+	grados_rotados = 5
+	timer.wait_time = 4
+	ataque_cooldown.wait_time = 0.1
+	_generar_canones(canones)
+	pass
+
+func _ataque_3_config() -> void:
+	timer.wait_time = 0.3
+	ataque_cooldown.stop()
 	pass

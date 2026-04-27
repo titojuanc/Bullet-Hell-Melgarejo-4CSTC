@@ -22,6 +22,7 @@ shape = SubResource("RectangleShape2D_nf8xo")
 [node name="Rotor" type="Node2D" parent="." unique_id=697461578]
 
 [node name="Ataque_Cooldown" type="Timer" parent="." unique_id=493262116]
+wait_time = 2.0
 
 [connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
 [connection signal="timeout" from="Ataque_Cooldown" to="." method="_on_ataque_cooldown_timeout"]

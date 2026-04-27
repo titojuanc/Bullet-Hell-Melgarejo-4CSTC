@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://5qdv5wrrnsdc" path="res://Objetos/Jefe.tscn" id="4_6vpby"]
 [ext_resource type="Script" uid="uid://4owhcgowruop" path="res://Bases/Jefe.gd" id="6_aokg8"]
 [ext_resource type="PackedScene" uid="uid://c7pwl8ns8qv6d" path="res://Objetos/Puerta.tscn" id="7_x62jb"]
-[ext_resource type="PackedScene" uid="uid://bywilqnv0vj6t" path="res://Utils/BossBar.tscn" id="8_cu0bs"]
+[ext_resource type="PackedScene" uid="uid://bywilqnv0vj6t" path="res://HUD/BossBar.tscn" id="8_cu0bs"]
 [ext_resource type="PackedScene" uid="uid://bgpaf6ujrrl31" path="res://HUD/PlayerBar.tscn" id="9_h0es5"]
 [ext_resource type="PackedScene" uid="uid://cvd70hlpulisq" path="res://HUD/PlayerIcon.tscn" id="10_xib56"]
 [ext_resource type="PackedScene" uid="uid://csthi064b0x0u" path="res://HUD/PantallaMuerte.tscn" id="11_pvmqk"]

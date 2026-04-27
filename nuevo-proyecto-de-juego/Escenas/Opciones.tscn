@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://cpy2577g5e57a"]
+
+[ext_resource type="Texture2D" uid="uid://eyeqptqa0oxd" path="res://Assets/MainMenuBG.png" id="1_xjy70"]
+[ext_resource type="FontFile" uid="uid://cwi1b6dgv0fan" path="res://Utils/Minecraftia-Regular.ttf" id="2_30ptr"]
+[ext_resource type="Script" uid="uid://dxdkegsch2o0b" path="res://Scripts/HUD/NavButton.gd" id="3_js1sj"]
+[ext_resource type="Texture2D" uid="uid://cgyyufa5gpv7n" path="res://Assets/sound_icon.png" id="4_83llc"]
+[ext_resource type="Script" uid="uid://c2u8d6qrjc2iy" path="res://Scripts/HUD/SliderOpciones.gd" id="5_phe4r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ir8rd"]
+bg_color = Color(0.6, 0.6, 0.6392157, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.7058824, 0.7058824, 0.13725491, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_22sdm"]
+bg_color = Color(0.9843137, 0.8666667, 0.30980393, 1)
+border_color = Color(0.8, 0.8, 0.11372549, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_6rutq"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_xam6d"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_phe4r"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_gxlum"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83llc"]
+
+[node name="Opciones" type="Control" unique_id=41120580]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=460508407]
+self_modulate = Color(0.4117647, 0.4117647, 0.43137255, 1)
+texture_filter = 1
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_xjy70")
+
+[node name="Label" type="Label" parent="." unique_id=723096676]
+layout_mode = 0
+offset_left = 421.0
+offset_top = 48.0
+offset_right = 766.0
+offset_bottom = 153.0
+theme_override_fonts/font = ExtResource("2_30ptr")
+theme_override_font_sizes/font_size = 60
+text = "OPCIONES"
+
+[node name="Jugar" type="Button" parent="." unique_id=1532370368]
+z_index = 1
+layout_mode = 0
+offset_left = 506.0
+offset_top = 536.0
+offset_right = 666.0
+offset_bottom = 599.0
+theme_override_fonts/font = ExtResource("2_30ptr")
+theme_override_font_sizes/font_size = 30
+text = "VOLVER"
+icon_alignment = 2
+expand_icon = true
+script = ExtResource("3_js1sj")
+direccion = "res://Escenas/MenuPrincipal.tscn"
+
+[node name="SoundIcon" type="Sprite2D" parent="." unique_id=1978535488]
+position = Vector2(367, 187)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_83llc")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=303279057]
+layout_mode = 0
+offset_left = 422.0
+offset_top = 171.0
+offset_right = 764.0
+offset_bottom = 198.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ir8rd")
+theme_override_styles/fill = SubResource("StyleBoxFlat_22sdm")
+script = ExtResource("5_phe4r")
+
+[node name="HSlider" type="HSlider" parent="." unique_id=911817212]
+layout_mode = 0
+offset_left = 421.0
+offset_top = 166.0
+offset_right = 763.0
+offset_bottom = 202.0
+theme_override_icons/grabber = SubResource("ViewportTexture_6rutq")
+theme_override_icons/grabber_highlight = SubResource("ViewportTexture_xam6d")
+theme_override_icons/grabber_disabled = SubResource("ViewportTexture_phe4r")
+theme_override_icons/tick = SubResource("ViewportTexture_gxlum")
+theme_override_styles/slider = SubResource("StyleBoxFlat_83llc")
+value = 100.0
+
+[connection signal="pressed" from="Jugar" to="Jugar" method="_on_pressed"]
+[connection signal="value_changed" from="HSlider" to="ProgressBar" method="_on_h_slider_value_changed"]

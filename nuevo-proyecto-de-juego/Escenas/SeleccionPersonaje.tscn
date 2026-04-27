@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b4xoh6pphok33" path="res://Assets/Soldier/Soldier-Idle.png" id="2_i7o6k"]
 [ext_resource type="Texture2D" uid="uid://biny4qn3uo8vu" path="res://Assets/Soldier/Soldier-Attack02.png" id="3_8k318"]
 [ext_resource type="FontFile" uid="uid://cwi1b6dgv0fan" path="res://Utils/Minecraftia-Regular.ttf" id="3_txh7x"]
-[ext_resource type="Script" uid="uid://cqqsisgnoq5be" path="res://Scripts/ElegirPersonaje.gd" id="4_jikio"]
+[ext_resource type="Script" uid="uid://cqqsisgnoq5be" path="res://Scripts/HUD/ElegirPersonaje.gd" id="4_jikio"]
 [ext_resource type="Texture2D" uid="uid://cv6fjmd40280n" path="res://Assets/Orc/Orc-Idle.png" id="4_txh7x"]
 [ext_resource type="Script" uid="uid://8dnhulfgldns" path="res://Scripts/Jefes/Macaw.gd" id="6_jhsu6"]
 [ext_resource type="Script" uid="uid://bnvg82wpiyb56" path="res://Scripts/Personajes/Soldier.gd" id="6_q07tc"]
