@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cbkec35jgf4t6" path="res://Objetos/FondoTileMap.tscn" id="12_lra2p"]
 [ext_resource type="PackedScene" uid="uid://3njatb3ctjep" path="res://Objetos/Portal.tscn" id="13_1a4fa"]
 [ext_resource type="PackedScene" uid="uid://bcc0nswnmk7eq" path="res://Objetos/BosqueTileMap.tscn" id="13_kfw8w"]
+[ext_resource type="Script" uid="uid://bjwjt2gxsie1e" path="res://Scripts/Jefes/SpiderBoss.gd" id="14_nygby"]
 
 [node name="Arena" type="Node2D" unique_id=1004500855]
 
@@ -61,7 +62,8 @@ tile_map_data = PackedByteArray("AAD7//3/EQAAAAMAAAD6//3/EQAAAAIAAAD5//3/EQAAAAE
 [node name="Portal" parent="." unique_id=1129822197 instance=ExtResource("13_1a4fa")]
 position = Vector2(1180, 27)
 scale = Vector2(3, 3)
-siguiente_nivel = "res://Escenas/MenuPrincipal.tscn"
+siguiente_nivel = "res://Escenas/Nivel_2.tscn"
+siguienteJefe = ExtResource("14_nygby")
 
 [connection signal="entro_arena" from="Jugador" to="Jugador/Cámara" method="_on_jugador_entro_arena"]
 [connection signal="entro_arena" from="Jugador" to="Jefe" method="_on_jugador_entro_arena"]

@@ -71,29 +71,10 @@ func _configurar_ataque() -> void:
 	var n = randi_range(1,3)
 	if n == 1:
 		ataque_seleccionado = 1
-		
-		#configuracion del ataque 1:
-		canones = 8
-		grados_rotados = 10
-		timer.wait_time = 5
-		ataque_cooldown.wait_time = 0.2
 	elif n == 2:
 		ataque_seleccionado = 2
-		
-		#configuracion del ataque 2:
-		canones = 4
-		grados_rotados = 5
-		timer.wait_time = 3
-		ataque_cooldown.wait_time = 0.1
 	elif n == 3:
 		ataque_seleccionado = 3
-		
-		#configuracion del ataque 3:
-		canones = 3
-		grados_rotados = 0
-		timer.wait_time = 5
-		ataque_cooldown.wait_time = 0.2
-	_generar_canones(canones)
 	timer.start()
 	ataque_cooldown.start()
 	pass

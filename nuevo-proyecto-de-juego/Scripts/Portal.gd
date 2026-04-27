@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var siguiente_nivel: String
+@export var siguienteJefe: Script
 var encima = false
 @onready var canvas: CanvasLayer = $CanvasLayer
 
@@ -11,8 +12,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if encima and visible == true:
 		if Input.is_action_pressed("f"):
+			ControlGlobal.jefe_seleccionado = siguienteJefe
 			get_tree().change_scene_to_file(siguiente_nivel)
-			print("lo hice")
 
 func _on_jefe_murio() -> void:
 	visible=true

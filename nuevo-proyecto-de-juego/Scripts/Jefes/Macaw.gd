@@ -11,6 +11,12 @@ func _configurar_jefe() -> void:
 	animador.play("Movimiento")
 
 func _ataque_1() -> void:
+	#configuracion del ataque 1:
+	canones = 8
+	grados_rotados = 10
+	timer.wait_time = 5
+	ataque_cooldown.wait_time = 0.2
+	_generar_canones(canones)
 	for c in rotor.get_children():
 		var bala = disparo.instantiate()
 		get_tree().root.add_child(bala)
@@ -20,6 +26,12 @@ func _ataque_1() -> void:
 	pass
 
 func _ataque_2() -> void:
+	#configuracion del ataque 2:
+	canones = 4
+	grados_rotados = 5
+	timer.wait_time = 3
+	ataque_cooldown.wait_time = 0.1
+	_generar_canones(canones)
 	for c in rotor.get_children():
 		var bala = disparo.instantiate()
 		get_tree().root.add_child(bala)
@@ -29,6 +41,12 @@ func _ataque_2() -> void:
 	pass
 
 func _ataque_3() -> void:
+	#configuracion del ataque 3:
+	canones = 3
+	grados_rotados = 0
+	timer.wait_time = 5
+	ataque_cooldown.wait_time = 0.2
+	_generar_canones(canones)
 	var c = rotor.get_child(0)
 	var direccion = jugador.global_position - global_position
 	c.position = Vector2(radio, 0).rotated(direccion.angle())
