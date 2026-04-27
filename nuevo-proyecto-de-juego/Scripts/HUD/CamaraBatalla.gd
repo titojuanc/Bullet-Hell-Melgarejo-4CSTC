@@ -35,7 +35,7 @@ func _on_jugador_entro_arena() -> void:
 	limit_top= -1000
 	limit_right= 1600
 	limit_left = -500
-	pass # Replace with function body.
+	pass
 
 
 func _on_jefe_murio() -> void:
@@ -44,4 +44,4 @@ func _on_jefe_murio() -> void:
 	camara_nueva.set_script(scriptCamara)
 	get_parent().add_child(camara_nueva)
 	queue_free()
-	pass # Replace with function body.
+	pass

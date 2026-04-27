@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://badi421w8t6vj"]
+
+[ext_resource type="Texture2D" uid="uid://bkylo42kmqniq" path="res://Assets/spiderBoss.png" id="1_n73dc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xatjo"]
+atlas = ExtResource("1_n73dc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bd6dp"]
+atlas = ExtResource("1_n73dc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q78rq"]
+atlas = ExtResource("1_n73dc")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1jgk"]
+atlas = ExtResource("1_n73dc")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85ctc"]
+atlas = ExtResource("1_n73dc")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nt4do"]
+atlas = ExtResource("1_n73dc")
+region = Rect2(160, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xatjo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bd6dp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q78rq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1jgk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85ctc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nt4do")
+}],
+"loop": true,
+"name": &"Movimiento",
+"speed": 10.0
+}]

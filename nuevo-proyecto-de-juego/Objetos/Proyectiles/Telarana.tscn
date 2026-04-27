@@ -1,3 +1,21 @@
 [gd_scene format=3 uid="uid://bj81ey1t7k7oi"]
 
-[node name="Telarana" type="Node2D" unique_id=2014751295]
+[ext_resource type="Texture2D" uid="uid://c58u5rx702wth" path="res://Assets/Spider_web-removebg-preview.png" id="1_80amh"]
+[ext_resource type="Script" uid="uid://d1yti2pfer4s1" path="res://Scripts/Balas/Telarana.gd" id="1_hfnqq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_80amh"]
+radius = 12.165525
+
+[node name="Telarana" type="CharacterBody2D" unique_id=431540059 groups=["Bala"]]
+collision_layer = 8
+collision_mask = 33
+script = ExtResource("1_hfnqq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1559143342 groups=["Bala"]]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_80amh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1544611540]
+position = Vector2(2.9999995, 3.9999995)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_80amh")
